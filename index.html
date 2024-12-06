@@ -4,11 +4,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Soraseed Design Labo</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.css"
+        integrity="sha512-DKdRaC0QGJ/kjx0U0TtJNCamKnN4l+wsMdION3GG0WVK6hIoJ1UPHRHeXNiGsXdrmq19JJxgIubb/Z7Og2qJww=@="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js"
+        integrity="sha512-KbRFbjA5bwNan6DvPl1ODUolvTTZ/vckssnFhka5cG80JVa5zSlRPCr055xSgU/q6oMIGhZWLhcbgIC0fyw3RQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Webフォント読み込み     -->
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'tao1ywr',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
 </head>
 
-<body>
 
+<body>
+    <!-- メインビジュアル -->
+    <section class="Home">
+        <div class="main">
+            <!-- ヘッダー -->
+            <div>
+                <picture class="sky">
+                    <source srcset="./images/sp_FV_sky@2x-80" media="(max-width:767px)">
+                    <img src="./images/FV_sky-80.jpg" alt="空">
+                </picture>
+            </div>
+            <header classs="header">
+                <div class="header_wrap">
+                    <h1 class="header_logo">
+                        <img src="./images/logo01.svg" alt="Soraseed Design Labo">
+                    </h1>
+                    <div class="openbtn">
+                        <span></span>
+                    </div>
+                    <nav class="global_nav">
+                        <ul>
+                            <li><a href="#Home">Home</a></li>
+                            <li><a href="#About">About</a></li>
+                            <li><a href="#Works">Works</a></li>
+                            <li><a href="Contact">Contact</a></li>
+                        </ul>
+                        <ul class="SNS_btn">
+                            <li><a href="https://x.com/Soraseed_wd"><img src="./images/icon_X.svg" alt="X"></a></li>
+                            <li><a href="https://www.instagram.com/soraseed_wd/"><img src="./images/icon_Instagram.svg"
+                                        alt="icon_Instagram"></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+            <div class="catch">
+                <h2>あなたの想いが<br>
+                    空いっぱいに育ちますように。</h2>
+                <div>
+                    <picture class="flower">
+                        <source srcset="./images/sp_FV_Flower@2x.png" media="(max-width:767px)">
+                        <img src="./images/FV_flower.png" alt="花">
+                    </picture>
+                </div>
+            </div>
+            <!-- スクロール -->
+            <div class="scroll_wrap">
+                <a href="#" class="scroll">
+                    <img src="./images/scroll.svg" alt="scroll" class="scroll_text">
+                    <img src="./images/arrow.svg" alt="矢印" class="scroll_arrow">
+                </a>
+            </div>
+            <!-- コンセプト -->
+            <div class="green_wrap">
+                <div class="green"><img src="./images/FV_green.svg" alt="green">
+                </div>
+                <div class="butterfly01">
+                    <img src="./images/butterfly01.png" alt="モンシロチョウ">
+                </div>
+                <p class="concept_lead"><span>想いのタネが<br></span>
+                    <span>おひさまの光をたくさん浴びて<br></span>
+                    <span>雨や風も力に変えて<br></span>
+                    <span>この空いっぱいに</span><span>のびのびと成長していく。<br></span>
+                    <span>デザインでそのお手伝いができれば</span><span>嬉しく思います。</span>
+                </p>
+            </div>
+        </div>
+        <!-- 高さ調整 -->
+        <div class="main_box"></div>
+    </section>
+
+    <!-- ABOUT ME -->
+    <section class="ABOUT_ME">
+        <h3>
+            ABOUT ME
+        </h3>
+        <div class="ABOUT_ME_wrap">
+            <div>
+                <picture class="ABOUT_ME_photo">
+                    <source srcset="./images/sp_ABOUT_photo@2x.png" media="(max-width:767px)">
+                    <img src="./images/ABOUT_photo.png" alt="私の写真">
+                </picture>
+            </div>
+            <div class="ABOUT_ME_intro">
+                <div class="ABOUT_ME_intro_inner">
+                    <p>人の心を動かすものを作りたい。ワクワクと笑顔をお届けしたい。<br>
+                        そんな想いを込めて丁寧にデザインを育てていきます。
+                    </p>
+                    <div class="view_more">
+                        <p>view more
+                        </p>
+                        <span></span>
+                    </div>
+                </div>
+                <!-- <div>
+                    <picture class="ABOUT_shape">
+                        <source srcset="./images/sp_ABOUT_shape@2x.png" media="(max-width:767px)">
+                        <img src="./images/ABOUT_shape.png" alt="背景画像">
+                    </picture>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- WORKS -->
+    <section class="WORKS">
+        <h3>
+            WORKS
+        </h3>
+        <div class="WORKS_circle"> </div>
+        <div class="WORKS_slider">
+            <div class="WORKS_item">
+                <img src="./images/work01-80.jpg" alt="work01">
+            </div>
+            <div class="WORKS_item">
+                <img src="./images/work02-80.jpg" alt="work01">
+            </div>s
+            <div class="WORKS_item">
+                <img src="./images/work03-80.jpg" alt="work01">
+            </div>
+            <div class="WORKS_item">
+                <img src="./images/work04-80.jpg" alt="work01">
+            </div>
+            <div class="WORKS_item">
+                <img src="./images/work05-80.jpg" alt="work01">
+            </div>
+            <div class="WORKS_item">
+                <img src="./images/work06-80.jpg" alt="work01">
+            </div>
+            <div class="WORKS_item">
+                <img src="./images/work07-80.jpg" alt="work01">
+            </div>
+        </div>
+
+    </section>
+
+    <!-- SKILL -->
+    <section class="SKILL">
+        <h3>
+            SKILL
+        </h3>
+        <div class="SKILL_wrap">
+            <div class="SKILL_unit">
+                <img src="./images/skill_design.svg" alt="デザインのアイコン">
+                <h4>design</h4>
+                <div class="SKILL_detail">
+                    <p>Webサイト、LP、バナー等のデザイン制作ができます。目的や課題にあわせたものを、細部までこだわって丁寧にお作りいたします。想いを汲んだデザインかつ、ユーザー目線でわかりやすいデザインをお届けいたします。
+                    </p>
+                    <p class="SKILL_tool">Adobe Illustrator / Adobe Photoshop</p>
+                </div>
+            </div>
+            <div class="SKILL_unit">
+                <img src="./images/skill_cording.svg" alt="コーディングのアイコン">
+                <h4>cording</h4>
+                <div class="SKILL_detail">
+                    <p>HTML/CSSを使用し、デザインをコーディングで再現いたします。また、Javascriptを使用した動きのあるサイト作りも可能です。誰が見てもわかりやすく、管理がしやすいコード設計を心がけています。モバイルユーザーからも見やすいレスポンシブにも対応しております。
+                    </p>
+                    <p class="SKILL_tool">HTML / CSS / Javascript / jQuery /VScode / GitHub</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="CONTACT">
+        <h3>
+            CONTACT
+        </h3>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+
+    </footer>
+
+    <!-- JavaScript & jQuery -->
+    <script>
+        $(function () {
+            $('.openbtn').on('click', function () {
+                $('.openbtn').toggleClass('open');
+                $('.globalnav').fadeToggle();
+            })
+            $('.WORKS_slider').slick({
+                // autoplay: true,
+                infinite: true,
+                arrows: true,
+                centerMode: true,
+                variableWidth: true,
+                centerPadding: '0',
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                speed: 300,
+                responsive: [
+
+                    {
+                        // 768~960px
+                        breakpoint: 960,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        },
+                    }
+                ]
+            })
+        })
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,257 @@
+@charset "utf-8";
+body {
+    background-color: #f9f7ef;
+}
+/* メインビジュアル */
+/* ヘッダー */
+.main {
+    position: relative;
+}
+.sky img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.header_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: absolute; */
+    position: absolute;
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+.header_logo {
+    width: 150px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+/* メニュー */
+.global_nav {
+    display: none;
+}
+
+.openbtn {
+    display: block;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    /* 位置の調整 */
+    position: absolute;
+    top: 35px;
+    right: 30px;
+    z-index: 2;
+}
+.openbtn span {
+    display: block;
+    width: 28px;
+    height: 2px;
+    text-align: right;
+    background: #564843;
+    /* 位置の調整 */
+    position: absolute;
+    top: 12px;
+    transition: 0.5s;
+}
+.openbtn span::before {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: #564843;
+    /* 位置の調整 */
+    position: absolute;
+    transition: 0.5s;
+    bottom: 12px;
+    right: 0;
+}
+.openbtn span::after {
+    content: "MENU";
+    display: block;
+    font-size: 10px;
+    /* 位置の調整 */
+    position: absolute;
+    transition: 0.5s;
+    top: 12px;
+}
+
+.SNS_btn {
+    display: flex;
+}
+.SNS_btn il {
+    height: 55px;
+}
+
+.catch h2 {
+    font-family: kiwi-maru, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 48px;
+    line-height: 1.7;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgb(100, 170, 181, 0.77);
+    /* 位置の調整 */
+    position: absolute;
+    /* top: 200px; */
+    top: 22%;
+    left: 133px;
+}
+.flower img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    /* top: 368px; */
+    top: 42%;
+    left: 0;
+    z-index: 10;
+}
+/* スクロール */
+.scroll_wrap {
+    max-width: 100px;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    /* top: 765px; */
+    top: 88%;
+    right: 10%;
+    z-index: 100;
+}
+.scroll_arrow {
+    height: 27px;
+    top: 93%;
+    right: 10%;
+}
+/* コンセプト */
+.green_wrap {
+    width: 100%;
+    position: absolute;
+    /* top: 795px; */
+    top: 91%;
+    z-index: 50;
+}
+/* .green {
+    position: relative;
+} */
+.butterfly01 {
+    position: absolute;
+    top: 23%;
+    right: 23%;
+}
+.concept_lead {
+    font-family: kiwi-maru, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 2.27;
+    text-align: center;
+    position: absolute;
+    top: 30%;
+    /* top: 200px; */
+    left: 30%;
+    /* left: 420px; */
+}
+.main_box {
+    height: 660px;
+}
+/* ~767px */
+@media screen and (max-width: 767px) {
+    .sky img {
+        max-width: 100%;
+        /* 表示されない？ */
+    }
+}
+
+/* ABOUT ME */
+h3 {
+    font-size: 48px;
+    color: #489baa;
+    text-align: center;
+    margin: 200px 0 50px 0;
+}
+.ABOUT_ME_wrap {
+    display: flex;
+    position: relative;
+}
+.ABOUT_ME_photo {
+    /* width: 32%; */
+    width: 100%;
+}
+.ABOUT_ME_photo img {
+    padding-left: 11%;
+    position: absolute;
+}
+.ABOUT_ME_intro {
+    width: 90%;
+    height: 506px;
+    background-image: url(../images/ABOUT_shape.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-right: 10%;
+    margin-left: 37%;
+    box-sizing: border-box;
+}
+.ABOUT_ME_intro_inner {
+    padding: 32% 10% 54% 14%;
+}
+.ABOUT_ME_intro p {
+    font-size: 18px;
+    align-items: center;
+    padding-bottom: 20%;
+}
+.veiw_more {
+    font-size: 12px;
+}
+.veiw_more span {
+    /* 中央寄せにしたい */
+}
+
+/* WORKS */
+.WORKS_circle {
+    margin: 0 auto;
+    background: #ffffff;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+}
+/* スライダー */
+.WORKS_slider {
+    margin: 0 auto;
+}
+.WORKS_item {
+}
+.slide img {
+    transform: scale(1);
+    transition: transform 0.3s;
+}
+.slide.slick-center img {
+    transform: scale(1.3);
+}
+.slider .slick-list {
+    overflow: visible;
+}
+
+/* SKILL */
+.SKILL_wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15%;
+    display: flex;
+    justify-content: space-between;
+}
+.SKILL_detail {
+    width: 350px;
+}
+h4 {
+    text-align: center;
+    font-size: 48px;
+    color: #aaa3a1;
+}
+.SKILL_tool {
+    font-size: 17px;
+    font-weight: 600;
+}
