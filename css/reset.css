@@ -15,7 +15,7 @@ ul,
 li {
     margin: 0;
     padding: 0;
-    line-height: 1;
+    line-height: 1.75;
     /*デフォルトの文字色、font-familyを予め当てておく*/
     color: #564843;
     font-family: "Avenir", "zen-maru-gothic", "Hiragino Maru Gothic ProN W4",

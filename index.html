@@ -76,17 +76,15 @@
                     </picture>
                 </div>
             </div>
-            <!-- スクロール -->
-            <div class="scroll_wrap">
-                <a href="#" class="scroll">
-                    <img src="./images/scroll.svg" alt="scroll" class="scroll_text">
-                    <img src="./images/arrow.svg" alt="矢印" class="scroll_arrow">
-                </a>
-            </div>
-            <!-- コンセプト -->
             <div class="green_wrap">
-                <div class="green"><img src="./images/FV_green.svg" alt="green">
+                <!-- スクロール -->
+                <div class="scroll_wrap">
+                    <a href="#" class="scroll">
+                        <img src="./images/scroll.svg" alt="scroll" class="scroll_text">
+                        <img src="./images/arrow.svg" alt="矢印" class="scroll_arrow">
+                    </a>
                 </div>
+                <!-- コンセプト -->
                 <div class="butterfly01">
                     <img src="./images/butterfly01.png" alt="モンシロチョウ">
                 </div>
@@ -99,7 +97,7 @@
             </div>
         </div>
         <!-- 高さ調整 -->
-        <div class="main_box"></div>
+        <!-- <div class="main_box"></div> -->
     </section>
 
     <!-- ABOUT ME -->
@@ -119,18 +117,14 @@
                     <p>人の心を動かすものを作りたい。ワクワクと笑顔をお届けしたい。<br>
                         そんな想いを込めて丁寧にデザインを育てていきます。
                     </p>
-                    <div class="view_more">
-                        <p>view more
-                        </p>
-                        <span></span>
+                    <div class="ABOUT_ME_btn_wrap">
+                        <a href="" class="ABOUT_ME_btn">
+                            <p>view more
+                            </p>
+                            <img src="./images/arrow_right.svg" alt="矢印">
+                        </a>
                     </div>
                 </div>
-                <!-- <div>
-                    <picture class="ABOUT_shape">
-                        <source srcset="./images/sp_ABOUT_shape@2x.png" media="(max-width:767px)">
-                        <img src="./images/ABOUT_shape.png" alt="背景画像">
-                    </picture>
-                </div> -->
             </div>
         </div>
     </section>
@@ -140,31 +134,39 @@
         <h3>
             WORKS
         </h3>
-        <div class="WORKS_circle"> </div>
-        <div class="WORKS_slider">
-            <div class="WORKS_item">
-                <img src="./images/work01-80.jpg" alt="work01">
-            </div>
-            <div class="WORKS_item">
-                <img src="./images/work02-80.jpg" alt="work01">
-            </div>s
-            <div class="WORKS_item">
-                <img src="./images/work03-80.jpg" alt="work01">
-            </div>
-            <div class="WORKS_item">
-                <img src="./images/work04-80.jpg" alt="work01">
-            </div>
-            <div class="WORKS_item">
-                <img src="./images/work05-80.jpg" alt="work01">
-            </div>
-            <div class="WORKS_item">
-                <img src="./images/work06-80.jpg" alt="work01">
-            </div>
-            <div class="WORKS_item">
-                <img src="./images/work07-80.jpg" alt="work01">
+        <div class="WORKS_circle_wrap">
+            <div class="WORKS_circle">
             </div>
         </div>
-
+        <div class="WORKS_slider">
+            <div class="WORKS_item">
+                <img src="./images/work01@2x-80.jpg" alt="work01">
+            </div>
+            <div class="WORKS_item">
+                <img src="./images/work02@2x-80.jpg" alt="work02">
+            </div>
+            <div class="WORKS_item">
+                <img src="./images/work03@2x-80.jpg" alt="work03">
+            </div>
+            <div class="WORKS_item">
+                <img src="./images/work04@2x-80.jpg" alt="work04">
+            </div>
+            <div class="WORKS_item">
+                <img src="./images/work05@2x-80.jpg" alt="work05">
+            </div>
+            <div class="WORKS_item">
+                <img src="./images/work06@2x-80.jpg" alt="work06">
+            </div>
+            <div class="WORKS_item">
+                <img src="./images/work07@2x-80.jpg" alt="work07">
+            </div>
+            <div class="WORKS_item">
+                <img src="./images/work08@2x-80.jpg" alt="work08">
+            </div>
+        </div>
+        <div class="WORKS_btn">
+            <a href="">view more</a>
+        </div>
     </section>
 
     <!-- SKILL -->
@@ -199,14 +201,29 @@
         <h3>
             CONTACT
         </h3>
+        <div class="CONTACT_message">
+            <p>
+                当サイトをご覧いただきありがとうございます。<br>ご依頼・ご相談等ございましたら、お気軽にお問い合わせください。
+            </p>
+        </div>
+        <div class="CONTACT_btn">
+            <a href="">
+                <img src="./images/CONTACT_btn.png" alt="おといあわせボタン">
+            </a>
+        </div>
+
     </section>
 
     <!-- フッター -->
     <footer>
-
+        <a href=""><img src="./images/bud.png" alt="芽" class="footer_bud"></a>
+        <img src="./images/FOOTER_soil.png" alt="フッター画像" class="footer_soil">
     </footer>
 
-    <!-- JavaScript & jQuery -->
+    <!-- ページトップアイコン -->
+    <a class="page_top" href="#header"><img src="./images/pagetop_icon.png" alt="ページトップ"></a>
+
+    <!-- JavaScript -->
     <script>
         $(function () {
             $('.openbtn').on('click', function () {
@@ -217,10 +234,11 @@
                 // autoplay: true,
                 infinite: true,
                 arrows: true,
+                prevArrow: '<div class="slide-arrow prev-arrow"><img src="./images/arrow_left.svg" class="slide-arrow prev-arrow"></div>',
+                nextArrow: '<div class="slide-arrow next-arrow"><img src="./images/arrow_right.svg" class="slide-arrow next-arrow"></div>',
                 centerMode: true,
-                variableWidth: true,
-                centerPadding: '0',
-                slidesToShow: 3,
+                centerPadding: '31%',
+                slidesToShow: 1,
                 slidesToScroll: 1,
                 speed: 300,
                 responsive: [
