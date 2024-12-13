@@ -22,7 +22,7 @@ header {
 }
 .header_logo {
     width: 150px;
-    position: absolute;
+    position: relative;
     top: 20px;
     left: 20px;
     z-index: 10002;
@@ -31,6 +31,9 @@ header {
 /* メニュー */
 .white_logo {
     display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .global_nav {
     display: none;
@@ -148,7 +151,7 @@ header {
     background: #e1f2f2;
     max-width: 1100px;
     width: 81%;
-    height: 700px;
+    padding: 7% 0;
     margin: 0 auto;
     margin-bottom: 125px;
 }
@@ -164,7 +167,20 @@ header {
     max-width: 900px;
     width: 82%;
     margin: 0 auto;
-    margin-top: 7%;
+    /* margin-top: 7%; */
+}
+.concept-slider .slick-slide {
+    transform-origin: left center;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    perspective: 1000px;
+}
+.concept-slider .slick-current {
+    transform: rotateY(0deg);
+    opacity: 1;
+}
+.concept-slider .slick-next {
+    transform: rotateY(-90deg);
+    opacity: 0;
 }
 /* 矢印の見た目 */
 .slide-arrow {
@@ -310,7 +326,7 @@ h4 {
 .favorite_item img {
     width: 100%;
 }
-.favorite_item p {
+.favorite_item > p {
     font-size: 18px;
     position: absolute;
     top: 6%;
@@ -335,7 +351,7 @@ h4 {
 }
 .favorite_mask p {
     width: 74%;
-    height: 74%;
+    /* height: 74%; */
     color: #ffffff;
     display: inline-block;
     text-align: left;
