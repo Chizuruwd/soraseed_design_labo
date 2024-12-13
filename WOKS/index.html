@@ -64,6 +64,65 @@
         </div>
     </header>
 
+    <!-- WORKS -->
+    <section class="WORKS">
+        <h3>WORKS</h3>
+        <!-- フィルター -->
+        <div class="filter_btn_wrap">
+            <div class="filter_btn">
+                <p>Webサイト</p>
+            </div>
+            <div class="filter_btn">
+                <p>LP</p>
+            </div>
+            <div class="filter_btn">
+                <p>バナー</p>
+            </div>
+            <div class="filter_btn">
+                <p>その他</p>
+            </div>
+            <div class="filter_btn">
+                <p>ALL</p>
+            </div>
+
+            <div class="filter_btn">
+                <p>デザイン</p>
+            </div>
+            <div class="filter_btn">
+                <p>コーディング</p>
+            </div>
+        </div>
+        <!-- WORKSエリア -->
+        <div class="WORKS_area">
+            <div class="=WORKS_unit">
+                <div>
+                    <img src="../images/work01@2x-80.jpg" alt="WORKS01">
+                </div>
+                <div class="WORKS_unit_text">
+                    <p>Webサイト ｜ デザイン/コーディング</p>
+                    <h5>ポートフォリオサイト</h5>
+                </div>
+            </div>
+            <div class="=WORKS_unit">
+                <div>
+                    <img src="../images/work02@2x-80.jpg" alt="WORKS01">
+                </div>
+                <div class="WORKS_unit_text">
+                    <p>Webサイト ｜ デザイン/コーディング</p>
+                    <h5>ポートフォリオサイト</h5>
+                </div>
+            </div>
+            <div class="=WORKS_unit">
+                <div>
+                    <img src="../images/work03@2x-80.jpg" alt="WORKS01">
+                </div>
+                <div class="WORKS_unit_text">
+                    <p>Webサイト ｜ デザイン/コーディング</p>
+                    <h5>ポートフォリオサイト</h5>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- フッター -->
     <footer>
@@ -84,29 +143,6 @@
             $('.openbtn').on('click', function () {
                 $('.white_logo').toggleClass('open');
                 $('.color_logo').fadeToggle();
-            })
-            $('.WORKS_slider').slick({
-                // autoplay: true,
-                infinite: true,
-                arrows: true,
-                prevArrow: '<div class="slide-arrow prev-arrow"><img src="../images/arrow_left.svg" class="slide-arrow prev-arrow"></div>',
-                nextArrow: '<div class="slide-arrow next-arrow"><img src="../images/arrow_right.svg" class="slide-arrow next-arrow"></div>',
-                centerMode: true,
-                centerPadding: '31%',
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                speed: 300,
-                responsive: [
-
-                    {
-                        // 768~960px
-                        breakpoint: 960,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
-                        },
-                    }
-                ]
             })
         })
     </script>

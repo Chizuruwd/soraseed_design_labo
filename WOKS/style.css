@@ -113,7 +113,7 @@ header {
     background-color: #ffffff;
     background-image: url("../images/FV_flower.png");
     background-repeat: no-repeat;
-    /* background-size: cover; */
+    background-size: 100%;
     background-position: bottom;
     background-blend-mode: multiply;
     background-color: rgba(125, 184, 195, 0.9);
@@ -141,7 +141,51 @@ header {
     height: 55px;
 }
 
+/* WORKS */
+h3 {
+    font-size: 48px;
+    color: #489baa;
+    text-align: center;
+    margin: 200px 0 50px 0;
+}
+/* フィルター */
+.filter_btn_wrap {
+    margin: 0 auto;
+    max-width: 600px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.filter_btn {
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    border: solid #eeedec;
+    background-color: #ffffff;
+    text-align: center;
+}
+.filter_btn p {
+    font-size: 13px;
+}
+/* WORKSエリア */
+.WORKS_area {
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-between;
+}
+.WORKS_unit img {
+    border-radius: 10%;
+}
+.WOKS_unit_text p {
+    font-size: 12px;
+}
+.WORKS_unit_text h5 {
+    font-size: 16px;
+}
 /* フッター */
+footer {
+    margin-top: 150px;
+}
 .footer_bud {
     padding-left: 10%;
 }
