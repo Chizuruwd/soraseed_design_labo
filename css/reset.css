@@ -52,3 +52,11 @@ img {
 html {
     scroll-behavior: smooth;
 }
+
+button {
+    /* すべてのデフォルトスタイルをリセット */
+    all: unset;
+    /* display: inline-block; aタグのようなインラインブロック要素に */
+    /* クリック可能に */
+    cursor: pointer;
+}
