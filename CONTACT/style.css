@@ -1,4 +1,5 @@
 @charset "utf-8";
+/* ▼ 共通 ▼------------------------------------------ */
 body {
     background-color: #f9f7ef;
 }
@@ -141,12 +142,33 @@ header {
     height: 55px;
 }
 
+/* フッター */
+footer {
+    margin-top: 150px;
+}
+.footer_bud {
+    padding-left: 10%;
+}
+.footer_soil {
+    display: block;
+    width: 100%;
+}
+/* ページトップアイコン */
+.page_top {
+    width: 100px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+}
+
+/* ▼ CONTACTページ ▼------------------------------------------ */
 /* CONTACT */
 h3 {
     font-size: 48px;
     color: #489baa;
     text-align: center;
-    margin: 200px 0 50px 0;
+    margin: 50px 0 50px 0;
 }
 .CONTACT_lead {
     text-align: center;
@@ -162,9 +184,13 @@ h3 {
     width: 100%;
     margin: 0 auto;
     text-align: center;
+    position: relative;
 }
 label {
     font-weight: 500;
+    line-height: 45px;
+    position: absolute;
+    left: -10%;
 }
 .form_block {
     margin-bottom: 35px;
@@ -173,8 +199,32 @@ label {
     border: solid 1px #aaa3a1;
     border-radius: 23px;
     width: 76%;
-    /* height: 45px; */
+    height: 45px;
+    box-sizing: border-box;
+    padding: 0 15px;
+    font-size: 100%;
 }
+.inqury_field {
+    height: 210px;
+    padding: 10px 15px;
+}
+/* セレクトボックスの矢印 */
+/* select {
+    appearance: none;
+}
+.form_field span {
+    position: relative;
+}
+.form_field span::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    right: 12px;
+    border-right: 12px solid transparent;
+    border-left: 12px solid transparent;
+    border-top: 12px solid #555;
+    border-bottom: 0;
+} */
 /* 送信ボタン */
 .send_btn {
     width: 167px;
@@ -190,6 +240,7 @@ label {
 .CONTACT_sns {
     background-color: #7db8c3;
     max-width: 530px;
+    margin: 0 auto;
     width: 100%;
     height: 60px;
     border-radius: 30px;
@@ -214,24 +265,31 @@ label {
 }
 .CONTACT_sns_wrap img {
     width: 22px;
+    padding: 10px 0;
 }
 
-/* フッター */
-footer {
-    margin-top: 150px;
+/* ▼ thanksページ ▼------------------------------------------ */
+/* .thanks_foot {
+    position: relative;
+} */
+.TOP_btn {
+    padding: -20px 0 150px 0;
+    text-align: center;
 }
-.footer_bud {
-    padding-left: 10%;
+.TOP_btn img {
+    width: 29%;
 }
-.footer_soil {
-    display: block;
-    width: 100%;
+.TOP_btn a img:hover {
+    opacity: 0.7;
+    transition: 0.3s;
 }
-/* ページトップアイコン */
-.page_top {
-    width: 100px;
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 9999;
+.thanks_flower {
+    position: relative;
+}
+.thanks_flower img {
+    width: 15%;
+    position: absolute;
+    /* top: 80px; */
+    bottom: -195px;
+    right: 16%;
 }
