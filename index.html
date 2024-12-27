@@ -36,49 +36,48 @@
     <!-- メインビジュアル -->
     <section class="Home">
         <div class="main">
-            <!-- ヘッダー -->
             <div>
-                <picture class="sky">
+                <picture class="sky" id="top">
                     <source srcset="./images/sp_FV_sky@2x-80.jpg" media="(max-width:767px)">
                     <img src="./images/FV_sky-80.jpg" alt="空">
                 </picture>
             </div>
+            <!-- ヘッダー -->
             <header classs="header">
-                <div class="header_wrap" id="header">
-                    <div id="main_header">
+                <div class="header_wrap">
+                    <div id="main_header" class="logo01 active">
                         <h1 class="header_logo">
                             <img src="./images/logo01.svg" alt="Soraseed Design Labo">
                         </h1>
                         <div class="openbtn">
                             <span></span>
                         </div>
-                        <div id="fixed_header">
-                            <h1 class="header_logo">
-                                <img src="./images/logo02.svg" alt="Soraseed Design Labo">
-                            </h1>
-                            <div class="openbtn">
-                                <span></span>
-                            </div>
-                        </div>
-                        <nav class="global_nav">
-                            <ul>
-                                <li><a href="#Home">Home</a></li>
-                                <li><a href="#About">About</a></li>
-                                <li><a href="#Works">Works</a></li>
-                                <li><a href="#Contact">Contact</a></li>
-                                <li>
-                                    <ul class="SNS_btn">
-                                        <li><a href="https://x.com/Soraseed_wd"><img src="./images/icon_X.svg"
-                                                    alt="X"></a>
-                                        </li>
-                                        <li><a href="https://www.instagram.com/soraseed_wd/"><img
-                                                    src="./images/icon_Instagram.svg" alt="icon_Instagram"></a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-
-                        </nav>
                     </div>
+                    <div id="sub_header" class="logo02">
+                        <h1 class="header_logo">
+                            <img src="./images/logo02.svg" alt="Soraseed Design Labo">
+                        </h1>
+                        <div class="openbtn">
+                            <span></span>
+                        </div>
+                    </div>
+                    <nav class="global_nav">
+                        <ul>
+                            <li><a class="global_nav_link" href="#top">Home</a></li>
+                            <li><a class="global_nav_link" href="./ABOUT/index.html">About</a></li>
+                            <li><a class="global_nav_link" href="./ABOUT/index.html">Works</a></li>
+                            <li><a class="global_nav_link" href="./CONTACT/index.html">Contact</a></li>
+                            <li>
+                                <ul class="SNS_btn">
+                                    <li><a href="https://x.com/Soraseed_wd"><img src="./images/icon_X.svg" alt="X"></a>
+                                    </li>
+                                    <li><a href="https://www.instagram.com/soraseed_wd/"><img
+                                                src="./images/icon_Instagram.svg" alt="icon_Instagram"></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </nav>
                 </div>
             </header>
 
@@ -105,8 +104,8 @@
                 <div class="butterfly01">
                     <img src="./images/butterfly01.png" alt="モンシロチョウ">
                 </div>
-                <p class="concept_lead"><span>想いのタネが<br></span>
-                    <span>おひさまの光をたくさん浴びて<br></span>
+                <p class="concept_lead"><span>想いのタネが</span><br>
+                    <span>おひさまの光をたくさん浴びて</span><br>
                     <span>雨や風も力に変えて<br></span>
                     <span>この空いっぱいに</span><span>のびのびと成長していく。<br></span>
                     <span>デザインでそのお手伝いができれば</span><span>嬉しく思います。</span>
@@ -127,16 +126,16 @@
             <img src="./images/cloud02.png" alt="雲">
         </div>
         <div class="ABOUT_wrap">
-            <div>
-                <picture class="ABOUT_photo">
-                    <source srcset="./images/sp_ABOUT_photo.png" media="(max-width:767px)">
+            <div class="ABOUT_photo">
+                <picture>
+                    <source srcset="./images/sp_ABOUT_photo@2x.png" media="(max-width:767px)">
                     <img src="./images/ABOUT_photo@2x.png" alt="私の写真">
                 </picture>
             </div>
             <div class="ABOUT_intro">
                 <div class="ABOUT_intro_inner">
-                    <p>人の心を動かすものを作りたい。ワクワクと笑顔をお届けしたい。<br>
-                        そんな想いを込めて丁寧にデザインを育てていきます。
+                    <p><span>人の心を動かすものを作りたい。</span><span>ワクワクと笑顔をお届けしたい。</span><br>
+                        <span>そんな想いを込めて</span><span>丁寧にデザインを育てていきます。</span>
                     </p>
                     <div class="ABOUT_btn_wrap">
                         <a href="" class="ABOUT_btn">
@@ -234,7 +233,7 @@
         <div class="cloud05">
             <img src="./images/cloud05.png" alt="雲">
         </div>
-        <div class="CONTACTssage">
+        <div class="CONTACTmessage">
             <p>
                 当サイトをご覧いただきありがとうございます。<br>ご依頼・ご相談等ございましたら、お気軽にお問い合わせください。
             </p>
@@ -247,14 +246,20 @@
 
     </section>
 
+
     <!-- フッター -->
     <footer>
         <a href=""><img src="./images/bud.png" alt="芽" class="footer_bud"></a>
+        <source srcset="./images/sp_FOOTER_soil.png" media="(max-width:767px)">
         <img src="./images/FOOTER_soil.png" alt="フッター画像" class="footer_soil">
+        <div class="copy">
+            <p>&copy;Soraseed Design Labo All rights reserved.</p>
+        </div>
     </footer>
 
     <!-- ページトップアイコン -->
-    <a class="page_top" href="#header"><img src="./images/pagetop_icon@2x.png" alt="ページトップ"></a>
+    <a class="page_top" href="#"><img src="./images/pagetop_icon@2x.png" alt="ページトップ" class="pagetop01 active">
+        <img src="./images/pagetop_icon02@2x.png" alt="ページトップ" class="pagetop02"></a>
 
     <!-- JavaScript -->
     <script>
@@ -263,49 +268,84 @@
             $('.openbtn').on('click', function () {
                 $('.openbtn').toggleClass('open');
                 $('.global_nav').fadeToggle();
+                // メニュー展開時はスクロールをロック
+                $("body").toggleClass("no_scroll");
             })
-            // ヘッダー
-            document.addEventListener('DOMContentLoaded', function () {
-                const mainHeader = document.getElementById('main_header');
-                const fixedHeader = document.getElementById('fixed_header');
-                let lastScrollTop = 0;
+            // グローバルナビクリック時にメニューを閉じる
+            $('.global_nav_link').on('click', function () {
+                // $('openbtn').removeClass('open')
+                $('.openbtn').toggleClass('open');
+                $('.global_nav').fadeToggle();
+                $("body").toggleClass("no_scroll");
+            })
 
-                window.addEventListener('scroll', function () {
-                    let scrollTop = window.scrollY || document.documentElement.scrollTop;
-                    if (scrollTop > lastScrollTop) {
-                        // スクロールダウン
-                        if (scrollTop > mainHeader.clientHeight) {
-                            fixedHeader.style.transform = 'translateY(0)';
-                            fixedHeader.style.opacity = '1';
-                        }
-                    } else {
-                        // スクロールアップ
-                        if (scrollTop <= mainHeader.clientHeight) {
-                            fixedHeader.style.transform = 'translateY(-100%)';
-                            fixedHeader.style.opacity = '0';
-                        }
-                    }
-                    lastScrollTop = scrollTop;// スクロール位置の更新
-                });
-            });
-            // メニュー展開時
-            document.addEventListener('DOMContentLoaded', function () {
-                const globalNav = document.querySelector('.global_nav');
-                window.addEventListener('scroll', function () {
-                    if (window.scrollY > 0) {
-                        globalNav.style.position = 'fixed';
-                    } else {
-                        globalNav.style.position = 'absolute';
-                    }
-                });
-            });
-            // $('.openbtn').click(function () {
-            //     if ($('.openbtn').prop('checked') == false) {
-            //         $('body').css('overflow', 'auto');
+            // ヘッダーロゴの色変更(jQuery版)
+            // $(window).on('scroll', function () {
+            //     const header = $('.header_wrap');
+            //     const logo01 = $('.logo01');
+            //     const logo02 = $('.logo02');
+            //     const greenWrap = $('.green_wrap');
+
+            //     const greenWrapBottom = greenWrap.offset().top + greenWrap.outerHeight();
+            //     const headerBottom = header.offset().top + header.outerHeight();
+
+            //     if (headerBottom > greenWrapBottom) {
+            //         $('.logo01').removeClass('active');
+            //         $('.logo02').addClass('active');
             //     } else {
-            //         $('body').css('overflow', 'hidden');
+            //         $('.logo02').removeClass('active');
+            //         $('.logo01').addClass('active');
             //     }
-            // });
+            // })
+
+
+            // ヘッダーロゴの色変更
+            window.addEventListener('scroll', function () {
+                const header = document.querySelector('.header_wrap');
+                const logo01 = document.querySelector('.logo01');
+                const logo02 = document.querySelector('.logo02');
+                const greenWrap = document.querySelector('.green_wrap');
+
+                // 緑色エリアの下端を計算
+                const greenWrapRect = greenWrap.getBoundingClientRect();
+                const greenWrapBottom = greenWrapRect.bottom;
+                // ヘッダーの下端を計算
+                const headerRect = header.getBoundingClientRect();
+                const headerBottom = headerRect.bottom;
+
+                // ロゴ切り替えの条件
+                if (headerBottom > greenWrapBottom) {
+                    logo01.classList.remove('active');
+                    logo02.classList.add('active');
+                } else {
+                    logo02.classList.remove('active');
+                    logo01.classList.add('active');
+                }
+            });
+
+            // ページトップアイコンの色変更
+            window.addEventListener('scroll', function () {
+                const pageTop = document.querySelector('.page_top');
+                const pagetop02 = document.querySelector('.pagetop02');
+                const pagetop01 = document.querySelector('.pagetop01');
+                const footer = document.querySelector('.footer_soil');
+
+                // フッターの上端を計算
+                const footerRect = footer.getBoundingClientRect();
+                const footerTop = footerRect.top;
+                // ページトップアイコンの下端を計算
+                const pageTopRect = pageTop.getBoundingClientRect();
+                const pageTopBottom = pageTopRect.bottom;
+
+                // アイコン切り替えの条件
+                if (pageTopBottom > footerTop) {
+                    pagetop02.classList.remove('active');
+                    pagetop01.classList.add('active');
+                } else {
+                    pagetop01.classList.remove('active');
+                    pagetop02.classList.add('active');
+                }
+            });
 
 
             // WORKS
@@ -323,11 +363,12 @@
                 responsive: [
 
                     {
-                        // 768~960px
-                        breakpoint: 960,
+                        // ~768px
+                        breakpoint: 795,
                         settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1
+                            centerPadding: '0',
+                            // slidesToShow: 1,
+                            // slidesToScroll: 1
                         },
                     }
                 ]

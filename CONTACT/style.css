@@ -289,7 +289,18 @@ label {
 .thanks_flower img {
     width: 15%;
     position: absolute;
-    /* top: 80px; */
-    bottom: -195px;
+    bottom: -5px;
     right: 16%;
+}
+/* フッターの下部固定 */
+.footer_fixed {
+    min-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom: 25%;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }

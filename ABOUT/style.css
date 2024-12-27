@@ -220,6 +220,13 @@ h5 {
 .profile_photo {
     max-width: 480px;
 }
+/* ~767px */
+@media screen and (max-width: 767px) {
+    .profile_wrap {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}
 
 /* my story */
 h4 {
@@ -355,6 +362,31 @@ h4 {
     color: #ffffff;
     display: inline-block;
     text-align: left;
+}
+/* ~767px */
+@media screen and (max-width: 767px) {
+    .favorite_item {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .favorite03 {
+        order: 2;
+    }
+    .favorite04 {
+        order: 1;
+    }
+    .favorite05 {
+        order: 4;
+    }
+    .favorite06 {
+        order: 3;
+    }
+    .favorite07 {
+        order: 5;
+    }
+    .favorite08 {
+        order: 6;
+    }
 }
 
 /* フッター */

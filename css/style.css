@@ -2,8 +2,10 @@
 body {
     background-color: #f9f7ef;
 }
+.no_scroll {
+    overflow: hidden;
+}
 /* メインビジュアル */
-/* ヘッダー */
 .main {
     position: relative;
 }
@@ -12,6 +14,7 @@ body {
     width: 100%;
     height: auto;
 }
+/* ヘッダー */
 .header_wrap {
     display: flex;
     justify-content: space-between;
@@ -31,13 +34,18 @@ body {
     left: 20px;
     z-index: 10002;
 }
-#fixed_header {
-    position: fixed;
-    top: 0;
-    left: 0;
+/* ヘッダーロゴの色変更 */
+/* .logo02 {
+    display: none;
+} */
+.logo01,
+.logo02 {
+    transition: opacity 2s ease;
     opacity: 0;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.logo01.active,
+.logo02.active {
+    opacity: 1;
 }
 /* メニュー */
 .global_nav {
@@ -120,7 +128,6 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    /* background: rgba(125, 184, 195, 0.9); */
     background-color: #ffffff;
     background-image: url("../images/FV_flower.png");
     background-repeat: no-repeat;
@@ -133,7 +140,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     margin-top: 170px;
     height: 100%;
 }
@@ -162,16 +168,14 @@ body {
     text-shadow: 0 0 10px rgb(100, 170, 181, 0.77);
     /* 位置の調整 */
     position: absolute;
-    /* top: 200px; */
     top: 14%;
-    left: 133px;
+    left: 10%;
     z-index: 15;
 }
 .flower img {
     width: 100%;
     height: auto;
     position: absolute;
-    /* top: 368px; */
     top: 25%;
     left: 0;
     z-index: 10;
@@ -185,7 +189,6 @@ body {
     width: 100%;
     height: 100px;
     position: absolute;
-    /* top: 765px; */
     top: -4%;
     right: 10%;
     z-index: 100;
@@ -222,6 +225,7 @@ body {
     margin-top: -5%;
 }
 .butterfly01 {
+    max-width: 9%;
     position: absolute;
     top: 21%;
     right: 23%;
@@ -238,10 +242,65 @@ body {
     left: 30%;
     /* left: 420px; */
 }
+
+/* 768px~960px */
+@media screen and (max-width: 960px) {
+    /* キャッチコピー */
+    .catch h2 {
+        font-size: 38px;
+        line-height: 2;
+    }
+}
 /* ~767px */
 @media screen and (max-width: 767px) {
+    /* メインビジュアル */
     .sky img {
         max-width: 100%;
+    }
+    /* ヘッダー */
+    .header_logo {
+        width: 100px;
+        top: 16px;
+        right: 15px;
+    }
+    .openbtn {
+        top: 20px;
+        right: 20px;
+    }
+    /* キャッチコピー */
+    .catch h2 {
+        font-size: 24px;
+        line-height: 2.5;
+    }
+    .flower img {
+        top: 0;
+    }
+    /* スクロール */
+    .scroll_wrap {
+        right: -5%;
+        overflow: hidden;
+    }
+
+    /* コンセプト */
+    .green_wrap {
+        background-image: url("../images/FV_green_sp.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 30% 0;
+        margin-top: -35%;
+    }
+    .butterfly01 {
+        max-width: 16%;
+        top: 14%;
+        right: 18%;
+    }
+    .concept_lead {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .concept_lead span {
+        display: inline-block;
     }
 }
 
@@ -256,36 +315,45 @@ h3 {
     margin: 200px 0 50px 0;
 }
 .cloud01 {
+    max-width: 20%;
     position: absolute;
     top: -100px;
     left: 1%;
 }
 .cloud02 {
+    max-width: 15%;
     position: absolute;
     top: 485px;
     right: 0;
 }
 .ABOUT_wrap {
+    max-width: 1100px;
+    margin: 0 auto;
     display: flex;
     position: relative;
 }
 .ABOUT_photo {
     width: 100%;
+    min-height: 380px;
 }
 .ABOUT_photo img {
     width: 32%;
     padding-left: 11%;
     position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
 }
 .ABOUT_intro {
     max-width: 730px;
-    width: 90%;
+    width: 100%;
     height: 506px;
     background-image: url(../images/ABOUT_shape.png);
     background-size: 100%;
     background-repeat: no-repeat;
-    margin-right: 10%;
-    margin-left: 37%;
+
+    /* margin-right: 10%; */
+    margin-left: -36%;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -294,8 +362,8 @@ h3 {
 .ABOUT_intro_inner > p {
     font-size: 18px;
     align-items: center;
+    margin: 0 -5% 0 5%;
     padding-bottom: 20%;
-    padding-left: 10px;
 }
 .ABOUT_btn {
     display: flex;
@@ -309,8 +377,44 @@ h3 {
     font-size: 12px;
     padding-top: 2px;
 }
+/* ~767px */
+@media screen and (max-width: 767px) {
+    h3 {
+        font-size: 36px;
+    }
+    .ABOUT_wrap {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .ABOUT_photo img {
+        max-width: 80%;
+        width: 100%;
+        /* padding-left: 11%; */
+    }
+    .ABOUT_intro {
+        background-image: url(../images/sp_ABOUT_shape@2x.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 380px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 10;
+    }
+    .ABOUT_intro_inner span {
+        display: inline-block;
+    }
+    .ABOUT_btn {
+        position: absolute;
+        right: 8%;
+        bottom: 8%;
+    }
+}
+
 /* WORKS */
 .sun {
+    max-width: 19%;
     position: absolute;
     top: -132px;
     left: 6%;
@@ -350,6 +454,7 @@ h3 {
 }
 /* スライダー */
 .WORKS_slider {
+    max-width: 84%;
     margin: 0 auto;
 }
 .WORKS_item {
@@ -382,8 +487,31 @@ h3 {
 .next-arrow {
     right: 51%;
 }
+/* ~767px */
+@media screen and (max-width: 767px) {
+    .WORKS_circle_wrap {
+        width: 110vw;
+        margin-left: calc(50% - 110vw / 2);
+        /* overflow: hidden; */
+    }
+    .WORKS_btn {
+        left: 0;
+        right: 0;
+    }
+    /* スライダー */
+
+    /* 矢印 */
+    .prev-arrow {
+        left: 8%;
+    }
+    .next-arrow {
+        right: 8%;
+    }
+}
+
 /* SKILL */
 .cloud03 {
+    max-width: 17%;
     position: absolute;
     top: -93px;
     right: 2%;
@@ -394,11 +522,12 @@ h3 {
     padding-top: 80px;
     /* 15% 0 15%; */
     display: flex;
-    justify-content: space-between;
-    /* gap: 250px; */
+    justify-content: center;
+    gap: 23%;
 }
 .SKILL_unit {
     max-width: 350px;
+    width: 32%;
     display: flex;
     flex-direction: column;
 }
@@ -415,14 +544,27 @@ h4 {
     margin-top: auto;
     height: calc(1.75em * 2);
 }
+/* ~767px */
+@media screen and (max-width: 767px) {
+    .SKILL_wrap {
+        flex-direction: column;
+        align-items: center;
+        gap: 100px;
+    }
+    .SKILL_unit {
+        width: 100%;
+    }
+}
 
 /* CONTACT */
 .cloud04 {
+    max-width: 24%;
     position: absolute;
     top: -232px;
     left: 0;
 }
 .cloud05 {
+    max-width: 17%;
     position: absolute;
     top: 132px;
     right: 4%;
@@ -430,15 +572,16 @@ h4 {
 .CONTACT div {
     text-align: center;
 }
-.CONTACTssage p {
+.CONTACTmessage p {
     display: inline-block;
     text-align: left;
-    padding-top: 60px;
+    padding: 60px 30px 0;
 }
 .CONTACT_btn {
     padding: 110px 0 120px 0;
 }
 .CONTACT_btn img {
+    min-width: 250px;
     width: 29%;
 }
 .CONTACT_btn a img:hover {
@@ -458,6 +601,14 @@ footer {
     display: block;
     width: 100%;
 }
+.copy {
+    margin-top: -30px;
+    text-align: center;
+}
+.copy p {
+    font-size: 12px;
+    color: #ffffff;
+}
 /* ページトップアイコン */
 .page_top {
     width: 100px;
@@ -465,4 +616,16 @@ footer {
     right: 20px;
     bottom: 20px;
     z-index: 9999;
+}
+.pagetop01,
+.pagetop02 {
+    transition: opacity 2s ease;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.pagetop01.active,
+.pagetop02.active {
+    opacity: 1;
 }
