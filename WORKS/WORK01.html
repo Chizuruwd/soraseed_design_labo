@@ -5,18 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soraseed Design Labo</title>
+    <!-- slick CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <!-- lightbox CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.css"
         integrity="sha512-DKdRaC0QGJ/kjx0U0TtJNCamKnN4l+wsMdION3GG0WVK6hIoJ1UPHRHeXNiGsXdrmq19JJxgIubb/Z7Og2qJww=@="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- remodal CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.css"
+        integrity="sha512-UO+dUiFTr6cCaPZKCzXEGhYsuK8DkGAS5iThyMUrtHsg+INCFyRM3GiqJ4rjuvfEyn81XGjpfmjSwwR1dAjAsw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal-default-theme.min.css"
+        integrity="sha512-jRxwiuoe3nt8lMSnOzNEuQ7ckDrLl31dwVYFWS6jklXQ6Nzl7b05rrWF9gjSxgOow5nFerdoN6CBB4gY5m5nDw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- リセットCSS -->
     <link rel="stylesheet" href="../css/reset.css">
+    <!-- css -->
     <link rel="stylesheet" href="./style.css">
+    <!-- jQuery JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- slick JS -->
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- lightbox JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js"
         integrity="sha512-KbRFbjA5bwNan6DvPl1ODUolvTTZ/vckssnFhka5cG80JVa5zSlRPCr055xSgU/q6oMIGhZWLhcbgIC0fyw3RQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- remodal JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.1/remodal.min.js"
+        integrity="sha512-a/KwXZUMuN0N2aqT/nuvYp6mg1zKg8OfvovbIlh4ByLw+BJ4sDrJwQM/iSOd567gx+yS0pQixA4EnxBlHgrL6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Webフォント読み込み     -->
     <script>
@@ -74,11 +92,25 @@
         </div>
         <!-- view moreボタン -->
         <div class="WORKS_btn">
-            <a href="../images/WORK01_PC@2x-80.jpg" data-lightbox="WORK01"><img src="../images/WORKS_btn@2x.png"
-                    alt="view moreボタン">
-            </a>
-            <a href="../images/WORK01_sp@2x-80.jpg" data-lightbox="WORK01"></a>
+            <button data-remodal-target="modal_work01"><img src="../images/WORKS_btn@2x.png"
+                    alt="view moreボタン"></button>
         </div>
+        <!-- モーダルウインドウ -->
+        <div class="remodal" data-remodal-id="modal_work01" date-remodal-options="hashTracking: false">
+            <!-- 閉じるボタン -->
+            <button data-remodal-action="close" class="remodal-close"></button>
+            <div class="modal_content">
+                <div class="modal_item">
+                    <h6>PC</h6>
+                    <img src="../images/WORK01_PC@2x-80.jpg" alt="PCモックアップ画像">
+                </div>
+                <div class="modal_item">
+                    <h6>mobile</h6>
+                    <img src="../images/WORK01_sp@2x-80.jpg" alt="Mobileモックアップ画像">
+                </div>
+            </div>
+        </div>
+
         <!-- WORKSテキスト -->
         <div class="text_container">
             <h4>ポートフォリオサイト</h4>

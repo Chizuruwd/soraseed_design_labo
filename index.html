@@ -5,20 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soraseed Design Labo</title>
+    <!-- slick CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <!-- lightbox CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.css"
         integrity="sha512-DKdRaC0QGJ/kjx0U0TtJNCamKnN4l+wsMdION3GG0WVK6hIoJ1UPHRHeXNiGsXdrmq19JJxgIubb/Z7Og2qJww=@="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- resetCSS -->
     <link rel="stylesheet" href="./css/reset.css">
+    <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css">
+    <!-- jQuery JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- slick JS -->
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- lightbox JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js"
         integrity="sha512-KbRFbjA5bwNan6DvPl1ODUolvTTZ/vckssnFhka5cG80JVa5zSlRPCr055xSgU/q6oMIGhZWLhcbgIC0fyw3RQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- Webフォント読み込み     -->
+    <!-- Webフォント -->
     <script>
         (function (d) {
             var config = {
@@ -157,38 +164,40 @@
         <div class="sun">
             <img src="./images/sun.png" alt="太陽">
         </div>
-        <div class="WORKS_circle_wrap">
-            <div class="WORKS_circle">
+        <div class="WORKS_slider_wrap">
+            <div class="WORKS_circle_wrap">
+                <div class="WORKS_circle">
+                </div>
             </div>
-        </div>
-        <div class="WORKS_slider">
-            <div class="WORKS_item">
-                <img src="./images/work01@2x-80.jpg" alt="work01">
+            <div class="WORKS_slider">
+                <div class="WORKS_item">
+                    <img src="./images/work01@2x-80.jpg" alt="work01">
+                </div>
+                <div class="WORKS_item">
+                    <img src="./images/work02@2x-80.jpg" alt="work02">
+                </div>
+                <div class="WORKS_item">
+                    <img src="./images/work03@2x-80.jpg" alt="work03">
+                </div>
+                <div class="WORKS_item">
+                    <img src="./images/work04@2x-80.jpg" alt="work04">
+                </div>
+                <div class="WORKS_item">
+                    <img src="./images/work05@2x-80.jpg" alt="work05">
+                </div>
+                <div class="WORKS_item">
+                    <img src="./images/work06@2x-80.jpg" alt="work06">
+                </div>
+                <div class="WORKS_item">
+                    <img src="./images/work07@2x-80.jpg" alt="work07">
+                </div>
+                <div class="WORKS_item">
+                    <img src="./images/work08@2x-80.jpg" alt="work08">
+                </div>
             </div>
-            <div class="WORKS_item">
-                <img src="./images/work02@2x-80.jpg" alt="work02">
+            <div class="WORKS_btn">
+                <a href="./WORKS/index.html">view more</a>
             </div>
-            <div class="WORKS_item">
-                <img src="./images/work03@2x-80.jpg" alt="work03">
-            </div>
-            <div class="WORKS_item">
-                <img src="./images/work04@2x-80.jpg" alt="work04">
-            </div>
-            <div class="WORKS_item">
-                <img src="./images/work05@2x-80.jpg" alt="work05">
-            </div>
-            <div class="WORKS_item">
-                <img src="./images/work06@2x-80.jpg" alt="work06">
-            </div>
-            <div class="WORKS_item">
-                <img src="./images/work07@2x-80.jpg" alt="work07">
-            </div>
-            <div class="WORKS_item">
-                <img src="./images/work08@2x-80.jpg" alt="work08">
-            </div>
-        </div>
-        <div class="WORKS_btn">
-            <a href="">view more</a>
         </div>
     </section>
 
@@ -250,8 +259,10 @@
     <!-- フッター -->
     <footer>
         <a href=""><img src="./images/bud.png" alt="芽" class="footer_bud"></a>
-        <source srcset="./images/sp_FOOTER_soil.png" media="(max-width:767px)">
-        <img src="./images/FOOTER_soil.png" alt="フッター画像" class="footer_soil">
+        <picture>
+            <source srcset="./images/sp_FOOTER_soil.png" media="(max-width:767px)">
+            <img src="./images/FOOTER_soil.png" alt="フッター画像" class="footer_soil">
+        </picture>
         <div class="copy">
             <p>&copy;Soraseed Design Labo All rights reserved.</p>
         </div>
@@ -363,8 +374,8 @@
                 responsive: [
 
                     {
-                        // ~768px
-                        breakpoint: 795,
+                        // ~767px
+                        breakpoint: 767,
                         settings: {
                             centerPadding: '0',
                             // slidesToShow: 1,

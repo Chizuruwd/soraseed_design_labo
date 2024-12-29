@@ -272,17 +272,23 @@ footer {
     margin: 0 auto;
     margin-top: 150px;
     display: flex;
-    gap: 30px;
+    gap: 4%;
 }
+.MockUp img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
 .MockUp_PC {
-    /* width: 47%; */
-    height: 512px;
+    max-width: 79%;
 }
 .MockUp_sp {
-    /* width: 17%; */
-    height: 381px;
+    max-width: 17%;
     padding-top: 100px;
+    box-shadow: 0px 10px 10px -6px rgba(0, 0, 0, 0.3);
 }
+
 /* view moreボタン */
 .WORKS_btn {
     width: 29%;
@@ -293,23 +299,37 @@ footer {
     display: inline-block;
 }
 /* モーダルウインドウ */
-.lb-image {
-    display: inline-block;
-    max-width: 45%;
-    margin: 0 2%;
-    vertical-align: middle;
-}
-
-.lb-outerContainer {
+.modal_content {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 112px;
 }
-
-.lightboxOverlay {
+/* 閉じるボタン */
+.remodal {
+    background: transparent;
+    color: #ffffff;
+}
+.remodal-close {
+    color: #ffffff;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    /* 閉じるボタンを右上に配置したい */
+}
+.remodal-close,
+.remodal-close:before {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+.remodal-overlay {
     background-color: rgba(72, 155, 170, 0.9);
 }
+.modal_item img {
+    width: 150%;
+    /* キャプチャ画像のサイズを大きくしたい */
+}
+
 /* WORKSテキスト */
 .text_container {
     max-width: 1100px;
