@@ -2,7 +2,7 @@
 body {
     background-color: #f9f7ef;
 }
-/* ヘッダー */
+/* -- ヘッダー -- */
 header {
     position: relative;
     height: 80px;
@@ -12,7 +12,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
+    /* position: absolute; */
     position: fixed;
     top: 0;
     left: 0;
@@ -26,6 +26,11 @@ header {
     top: 20px;
     left: 20px;
     z-index: 10002;
+}
+.color_logo {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 /* メニュー */
@@ -113,7 +118,6 @@ header {
     left: 0;
     width: 100%;
     height: 100vh;
-    /* background: rgba(125, 184, 195, 0.9); */
     background-color: #ffffff;
     background-image: url("../images/FV_flower.png");
     background-repeat: no-repeat;
@@ -126,7 +130,6 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     margin-top: 170px;
     height: 100%;
 }
@@ -144,8 +147,23 @@ header {
 .SNS_btn li img {
     height: 55px;
 }
+/* ~767px */
+@media screen and (max-width: 767px) {
+    .header_logo {
+        /* width: 100px; */
+        top: 15px;
+        left: 17px;
+    }
+    .header_logo img {
+        width: 100px;
+    }
+    .openbtn {
+        top: 25px;
+        right: 18px;
+    }
+}
 
-/* コンセプト */
+/* -- コンセプト -- */
 
 .concept_slider_wrap {
     background: #e1f2f2;
@@ -196,14 +214,16 @@ header {
     right: 9%;
 }
 
-/* プロフィール */
+/* -- プロフィール -- */
 .profile_wrap {
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
     padding: 0 10px;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
+    gap: 7%;
 }
 .profile_text {
     padding-left: 30px;
@@ -213,6 +233,9 @@ h5 {
     font-family: kiwi-maru, sans-serif;
     font-weight: 500;
     font-size: 28px;
+}
+h5 span {
+    display: inline-block;
 }
 .profile_text p {
     font-size: 17px;
@@ -226,9 +249,15 @@ h5 {
         flex-direction: column-reverse;
         align-items: center;
     }
+    h5 {
+        font-size: 17px;
+    }
+    .profile_text p {
+        font-size: 14px;
+    }
 }
 
-/* my story */
+/* -- my story -- */
 h4 {
     font-size: 48px;
     font-weight: 600;
@@ -245,6 +274,7 @@ h4 {
     /* background-position: bottom; */
     position: relative;
 }
+/* 縦線 */
 .timeline::before {
     content: "";
     width: 1px;
@@ -272,6 +302,7 @@ h4 {
     font-size: 22px;
     flex: 1;
 }
+/* マーカー */
 .timeline_ttl::before {
     content: "";
     display: block;
@@ -283,6 +314,7 @@ h4 {
     top: 13%;
     left: calc(50% - 3.5px);
 }
+/* 横線 */
 .timeline li:nth-child(odd) .timeline_ttl::after {
     content: "";
     display: block;
@@ -306,6 +338,7 @@ h4 {
 .timeline_box {
     width: 50%;
 }
+/* 矢印 */
 .timeline_arrow {
     height: 70px;
 }
@@ -320,7 +353,59 @@ h4 {
     transform: rotate(-45deg);
     transform-origin: bottom left;
 }
-/* favorite */
+/* ~767px */
+@media screen and (max-width: 767px) {
+    h4 {
+        font-size: 27px;
+    }
+    .timeline {
+        /* background-image: url(../images/sp_my_story_tree@2x.png); */
+        background-size: cover;
+        background-position: left -660px bottom;
+    }
+    /* 縦線 */
+    .timeline::before {
+        left: 8%;
+    }
+    .timeline li {
+        justify-content: normal;
+    }
+    .timeline_item {
+        width: 75%;
+        margin-bottom: 65px;
+        margin-left: 17%;
+    }
+    .timeline_ttl {
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .timeline_detail {
+        font-size: 14px;
+    }
+    /* マーカー */
+    .timeline_ttl::before {
+        left: calc(8% - 3.5px);
+    }
+    /* 横線 */
+    .timeline li:nth-child(odd) .timeline_ttl::after,
+    .timeline li:nth-child(even) .timeline_ttl::after {
+        left: 8%;
+        width: 8%;
+    }
+    .timeline li:nth-child(odd) {
+        flex-direction: column;
+    }
+    .timeline_box {
+        display: none;
+    }
+    /* 矢印 */
+    .timeline_arrow::before {
+        width: 5%;
+        left: 8%;
+    }
+}
+
+/* -- favorite -- */
 .favorite_item_wrap {
     display: flex;
     flex-wrap: wrap;
@@ -369,6 +454,16 @@ h4 {
         width: 50%;
         margin: 0 auto;
     }
+    .favorite_item > p {
+        font-size: 14px;
+    }
+    .favorite_mask p {
+        width: 87%;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 1.41;
+        letter-spacing: -0.04em;
+    }
     .favorite03 {
         order: 2;
     }
@@ -389,7 +484,7 @@ h4 {
     }
 }
 
-/* フッター */
+/* -- フッター -- */
 footer {
     margin-top: 150px;
 }
@@ -400,7 +495,7 @@ footer {
     display: block;
     width: 100%;
 }
-/* ページトップアイコン */
+/* -- ページトップアイコン -- */
 .page_top {
     width: 100px;
     position: fixed;

@@ -1,18 +1,21 @@
 @charset "utf-8";
-html,
+/* html,
 body {
     overflow-x: hidden;
-}
+} */
 body {
     background-color: #f9f7ef;
 }
 .no_scroll {
     overflow: hidden;
 }
-/* メインビジュアル */
-/* .Home {
+.contents {
     overflow-x: hidden;
-} */
+}
+/* -- メインビジュアル -- */
+.Home {
+    overflow-x: hidden;
+}
 .main {
     position: relative;
 }
@@ -21,7 +24,7 @@ body {
     width: 100%;
     height: auto;
 }
-/* ヘッダー */
+/* -- ヘッダー --*/
 .header_wrap {
     display: flex;
     justify-content: space-between;
@@ -164,6 +167,26 @@ body {
 .SNS_btn li img {
     height: 55px;
 }
+/* 768px~960px */
+@media screen and (max-width: 960px) {
+    .header_logo {
+        width: 100px;
+        top: 16px;
+        right: 15px;
+    }
+    .openbtn {
+        top: 20px;
+        right: 20px;
+    }
+    /* .global_nav {
+        background-image: url(../images/sp_FV_Flower@2x.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: bottom;
+        background-blend-mode: multiply;
+    } */
+}
+
 /* キャッチコピー */
 .catch h2 {
     font-family: kiwi-maru, sans-serif;
@@ -264,16 +287,6 @@ body {
     .sky img {
         max-width: 100%;
     }
-    /* ヘッダー */
-    .header_logo {
-        width: 100px;
-        top: 16px;
-        right: 15px;
-    }
-    .openbtn {
-        top: 20px;
-        right: 20px;
-    }
     /* キャッチコピー */
     .catch h2 {
         font-size: 24px;
@@ -310,7 +323,7 @@ body {
     }
 }
 
-/* ABOUT ME */
+/* -- ABOUT ME -- */
 section {
     position: relative;
 }
@@ -430,7 +443,7 @@ h3 {
     }
 }
 
-/* WORKS */
+/* -- WORKS -- */
 .sun {
     max-width: 19%;
     position: absolute;
@@ -531,7 +544,7 @@ h3 {
     }
 }
 
-/* SKILL */
+/* -- SKILL -- */
 .cloud03 {
     max-width: 17%;
     position: absolute;
@@ -583,7 +596,7 @@ h4 {
     }
 }
 
-/* CONTACT */
+/* -- CONTACT -- */
 .cloud04 {
     max-width: 24%;
     position: absolute;
@@ -617,7 +630,7 @@ h4 {
     /* transform: scale(1.1); */
 }
 
-/* フッター */
+/* -- フッター -- */
 footer {
     margin-top: 150px;
 }
@@ -636,7 +649,7 @@ footer {
     font-size: 12px;
     color: #ffffff;
 }
-/* ページトップアイコン */
+/* -- ページトップアイコン -- */
 .page_top {
     width: 100px;
     position: fixed;
