@@ -179,9 +179,13 @@ h3 {
 }
 .filter_btn input:checked + label {
     background-color: #7db8c3;
-    /* background-color: #d3eeef; */
     color: #ffffff;
 }
+.filter_btn label:hover {
+    background-color: #bcd6db;
+    cursor: pointer;
+}
+
 /* WORKSエリア */
 .WORKS {
     margin-bottom: 275px;
@@ -280,8 +284,14 @@ footer {
     bottom: 20px;
     z-index: 9999;
 }
+@media screen and (max-width: 767px) {
+    h3 {
+        font-size: 36px;
+    }
+}
 
 /* ▼ WORKS詳細ページ ▼------------------------------------------ */
+/* モックアップ画像 */
 .MockUp {
     max-width: 1100px;
     margin: 0 auto;
@@ -343,6 +353,11 @@ footer {
 .modal_item img {
     width: 150%;
     /* キャプチャ画像のサイズを大きくしたい */
+}
+/* バナー画像 */
+.WORK_banner {
+    max-width: 700px;
+    margin: 95px auto 100px;
 }
 
 /* WORKSテキスト */
@@ -413,4 +428,44 @@ h5 {
     color: #ffffff;
     background-color: #564843;
     transition: 0.7s;
+}
+
+@media screen and (max-width: 767px) {
+    /* モックアップ画像 */
+    .MockUp {
+        gap: 0;
+        align-items: flex-end;
+    }
+    .MockUp_PC {
+        margin-left: 6%;
+    }
+    .MockUp_sp {
+        margin-left: -12%;
+    }
+    .text_container {
+        margin-left: 8%;
+    }
+    /* WORKSテキスト */
+    .WORKS_text {
+        flex-direction: column;
+    }
+    .WORKS_category {
+        width: 84%;
+        margin-bottom: 40px;
+    }
+    .WORKS_detail {
+        width: 84%;
+        padding-top: 30px;
+    }
+
+    .WORKS_detail::before {
+        width: 100%;
+        height: 1px;
+        left: 50%;
+    }
+    /* 戻るボタン */
+    .back_btn p {
+        width: 40%;
+        font-size: 14px;
+    }
 }

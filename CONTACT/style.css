@@ -178,12 +178,24 @@ h3 {
     display: inline-block;
     text-align: left;
 }
-/* お問い合わせフォーム */
+@media screen and (max-width: 767px) {
+    h3 {
+        font-size: 36px;
+    }
+    .CONTACT_lead p {
+        font-size: 14px;
+    }
+}
+/* -- お問い合わせフォーム -- */
 .contact_form {
     max-width: 700px;
     width: 100%;
     margin: 0 auto;
     text-align: center;
+    /* position: relative; */
+}
+.form_block {
+    margin-bottom: 35px;
     position: relative;
 }
 label {
@@ -191,9 +203,6 @@ label {
     line-height: 45px;
     position: absolute;
     left: -10%;
-}
-.form_block {
-    margin-bottom: 35px;
 }
 .form_field {
     border: solid 1px #aaa3a1;
@@ -236,7 +245,24 @@ label {
 .send_btn img {
     width: 100%;
 }
-/* SNSボタン */
+@media screen and (max-width: 767px) {
+    .form_block {
+        margin-bottom: 45px;
+    }
+    label {
+        font-size: 14px;
+        top: -36px;
+        left: 10%;
+    }
+    .form_field {
+        width: 84%;
+    }
+    .send_btn {
+        width: 120px;
+    }
+}
+
+/* -- SNSボタン -- */
 .CONTACT_sns {
     background-color: #7db8c3;
     max-width: 530px;
@@ -266,6 +292,14 @@ label {
 .CONTACT_sns_wrap img {
     width: 22px;
     padding: 10px 0;
+}
+@media screen and (max-width: 767px) {
+    .CONTACT_sns {
+        width: 84%;
+    }
+    .CONTACT_sns_wrap p {
+        font-size: 12px;
+    }
 }
 
 /* ▼ thanksページ ▼------------------------------------------ */
