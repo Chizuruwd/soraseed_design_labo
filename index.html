@@ -224,9 +224,9 @@
                     <img src="./images/skill_cording.svg" alt="コーディングのアイコン">
                     <h4>coding</h4>
                     <!-- <div class="SKILL_detail"> -->
-                    <p>HTML/CSSを使用し、デザインをコーディングで再現いたします。また、Javascriptを使用した動きのあるサイト作りも可能です。誰が見てもわかりやすく、管理がしやすいコード設計を心がけています。モバイルユーザーからも見やすいレスポンシブにも対応しております。
+                    <p>HTML/CSSを使用し、デザインをコーディングで再現いたします。また、JavaScriptを使用した動きのあるサイト作りも可能です。誰が見てもわかりやすく、管理がしやすいコード設計を心がけています。モバイルユーザーからも見やすいレスポンシブにも対応しております。
                     </p>
-                    <p class="SKILL_tool">HTML / CSS / Javascript / jQuery /VScode / GitHub</p>
+                    <p class="SKILL_tool">HTML / CSS / JavaScript / jQuery /VSCode / GitHub</p>
                     <!-- </div> -->
                 </div>
             </div>
@@ -259,9 +259,11 @@
 
     <!-- フッター -->
     <footer>
-        <a href=""><img src="./images/bud.png" alt="芽" class="footer_bud"></a>
+        <div class="plant_image">
+            <img src="./images/bud.png" alt="芽" class="footer_bud">
+        </div>
         <picture>
-            <source srcset="./images/sp_FOOTER_soil.png" media="(max-width:767px)">
+            <source srcset="./images/sp_FOOTER_soil@2x.png" media="(max-width:767px)">
             <img src="./images/FOOTER_soil.png" alt="フッター画像" class="footer_soil">
         </picture>
         <div class="copy">
@@ -311,7 +313,7 @@
             // })
 
 
-            // ヘッダーロゴの色変更
+            // == ヘッダーロゴの色変更 --
             window.addEventListener('scroll', function () {
                 const header = document.querySelector('.header_wrap');
                 const logo01 = document.querySelector('.logo01');
@@ -335,7 +337,24 @@
                 }
             });
 
-            // ページトップアイコンの色変更
+            // -- フッターのイベント --
+            const plantImage = document.querySelector(".footer_bud");
+
+            plantImage.addEventListener("click", function () {
+                if (!plantImage.classList.contains("tree")) {
+                    // 芽から木に変える
+                    plantImage.classList.add("tree");
+                    plantImage.alt = "木";
+                } else {
+                    // 木の状態でクリックされた場合、隠しページに遷移
+                    window.location.href = "./SECRET/index.html";
+                }
+            });
+
+
+
+
+            // -- ページトップアイコンの色変更 --
             window.addEventListener('scroll', function () {
                 const pageTop = document.querySelector('.page_top');
                 const pagetop02 = document.querySelector('.pagetop02');

@@ -333,6 +333,7 @@ footer {
 .remodal {
     background: transparent;
     color: #ffffff;
+    max-width: initial;
 }
 .remodal-close {
     color: #ffffff;
@@ -344,8 +345,9 @@ footer {
 .remodal-close,
 .remodal-close:before {
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 5px;
+    right: 5px;
+    left: auto;
 }
 .remodal-overlay {
     background-color: rgba(72, 155, 170, 0.9);

@@ -62,19 +62,19 @@
         <!-- フィルター -->
         <div class="filter_btn_wrap">
             <div class="filter_btn">
-                <input type="checkbox" name="category" value="Website" id="website">
+                <input type="checkbox" name="Website" value="Website" id="website">
                 <label for="website">Webサイト</label>
             </div>
             <div class="filter_btn">
-                <input type="checkbox" name="category" value="LP" id="LP">
+                <input type="checkbox" name="LP" value="LP" id="LP">
                 <label for="LP">LP</label>
             </div>
             <div class="filter_btn">
-                <input type="checkbox" name="category" value="banner" id="banner">
+                <input type="checkbox" name="banner" value="banner" id="banner">
                 <label for="banner">バナー</label>
             </div>
             <div class="filter_btn">
-                <input type="checkbox" name="category" value="other" id="other">
+                <input type="checkbox" name="other" value="other" id="other">
                 <label for="other">その他</label>
             </div>
             <div class="filter_btn">
@@ -83,17 +83,17 @@
             </div>
 
             <div class="filter_btn">
-                <input type="checkbox" name="category" value="design" id="design">
+                <input type="checkbox" name="design" value="design" id="design">
                 <label for="design">デザイン</label>
             </div>
             <div class="filter_btn">
-                <input type="checkbox" name="category" value="coding" id="coding">
+                <input type="checkbox" name="coding" value="coding" id="coding">
                 <label for="coding">コーディング</label>
             </div>
         </div>
         <!-- WORKSエリア -->
         <div class="WORKS_area">
-            <div class="WORKS_unit" data-category="Website" data-skill="design coding">
+            <div class="WORKS_unit" data-category="Website design coding" data-skill="design coding">
                 <!-- data-category='Webサイト' data-skill='["design", "cording"]' -->
                 <a href="">
                     <div class="WORKS_item">
@@ -110,7 +110,7 @@
                     <h5>ポートフォリオサイト</h5>
                 </div>
             </div>
-            <div class="WORKS_unit" data-category="LP" data-skill="design">
+            <div class="WORKS_unit" data-category="LP design" data-skill="design">
                 <a href="">
                     <div class="WORKS_item">
                         <img src="../images/work02@2x-80.jpg" alt="WORKS02">
@@ -126,7 +126,7 @@
                     <h5>LIFE hair disign</h5>
                 </div>
             </div>
-            <div class="WORKS_unit" data-category="LP" data-skill="coding">
+            <div class="WORKS_unit" data-category="LP coding" data-skill="coding">
                 <a href="">
                     <div class="WORKS_item">
                         <img src="../images/work03@2x-80.jpg" alt="WORKS03">
@@ -142,7 +142,7 @@
                     <h5>DESIGN CAFE</h5>
                 </div>
             </div>
-            <div class="WORKS_unit" data-category="LP" data-skill="design">
+            <div class="WORKS_unit" data-category="LP design" data-skill="design">
                 <a href="">
                     <div class="WORKS_item">
                         <img src="../images/work04@2x-80.jpg" alt="WORKS04">
@@ -158,7 +158,7 @@
                     <h5>WORKERS</h5>
                 </div>
             </div>
-            <div class="WORKS_unit" data-category="banner" data-skill="design">
+            <div class="WORKS_unit" data-category="banner design" data-skill="design">
                 <a href="">
                     <div class="WORKS_item">
                         <img src="../images/work05@2x-80.jpg" alt="WORKS05">
@@ -174,7 +174,7 @@
                     <h5>デラックスバーガー(POPver)</h5>
                 </div>
             </div>
-            <div class="WORKS_unit" data-category="banner" data-skill="design">
+            <div class="WORKS_unit" data-category="banner design" data-skill="design">
                 <a href="">
                     <div class="WORKS_item">
                         <img src="../images/work06@2x-80.jpg" alt="WORKS06">
@@ -190,7 +190,7 @@
                     <h5>デラックスバーガー(高級ver)</h5>
                 </div>
             </div>
-            <div class="WORKS_unit" data-category="banner" data-skill="design">
+            <div class="WORKS_unit" data-category="banner design" data-skill="design">
                 <a href="">
                     <div class="WORKS_item">
                         <img src="../images/work07@2x-80.jpg" alt="WORKS07">
@@ -206,7 +206,7 @@
                     <h5>TRRRIP.</h5>
                 </div>
             </div>
-            <div class="WORKS_unit" data-category="banner" data-skill="design">
+            <div class="WORKS_unit" data-category="banner design" data-skill="design">
                 <a href="">
                     <div class="WORKS_item">
                         <img src="../images/work08@2x-80.jpg" alt="WORKS08">
@@ -270,106 +270,6 @@
 
 
         // -- フィルター --
-        $(function () {
-            var filterBtn = '.filter_btn';
-            var worksUnit = '.WORKS_unit';
-            var hideClass = 'hidden';
-            var allBtn = 'input[name="all"]';
-
-            // ページロード時の初期化
-            if (performance.navigation.type === 1) {
-                $(`${filterBtn} input`).prop('checked', false);
-                $(allBtn).prop('checked', true);
-            }
-            // 絞り込み条件が変更された時
-            $(document).on('change', filterBtn + 'input', function () {
-                search_filter();
-            });
-        })
-
-        // アイテムの絞り込み
-        function search_filter() {
-            $(worksUnit).removeClass(hideClass);
-
-            for (var i = 0; i < $(filterBtn).length; i++) {
-                var name = $(filterBtn).eq(i).find('input').attr('name');
-                // 選択されている項目を取得
-                var searchData = get_selected_input_items(name);
-
-                // 選択されている項目はなし、またはALLの場合は飛ばす
-                if (searchData.length === 0 || searchData[0] === '') {
-                    continue;
-                }
-
-                for (var j = 0; j < $(worksUnit).length; j++) {
-                    // アイテムに設定している項目を取得
-                    var itemData = get_setting_values_in_item($(worksUnit).eq(j), name);
-                    // 絞り込み対象かどうか調べる
-                    var check = array_match_check(itemData, searchData);
-                    if (!check) {
-                        $(worksUnit).eq(j).addClass(hideClass);
-                    }
-                }
-            }
-
-            // 表示されるアイテムがない時
-            if ($('.disnone').length) {
-                if ($('.worksUnit').length != $('hidden').lenght) {
-                    $('.disnone').remove();
-                }
-                return false;
-            } else
-                if ($('.WORKS_unit').length == $('.hidden').length) {
-                    $('.WORKS_area').append('<div class="disnone">表示するものがありません</div>');
-                }
-
-            // ALLボタンの制御
-            if (!$(filterBtn + 'input').is(':checked')) {
-                $(allBtn).prop('checked', true); // 全て未選択ならALLを選択
-            } else {
-                $(allBtn).prop('checked', false); // いずれか選択されたらALLを非選択
-            }
-
-            $(allBtn).on('click', function () {
-                $(filterBtn + 'input').prop('checked', false);
-                $('.disnone').remove();
-
-                $(worksUnit).removeClass(hideClass);
-            });
-        }
-
-        // フィルタボタンで選択されている値を取得
-        function get_selected_input_items(name) {
-            var searchData = [];
-            $('[name=' + name + ']:checked').each(function () {
-                searchData.push($(this).val());
-            });
-            // console.log('searchData:'+searchData);
-            return searchData;
-        }
-
-        // アイテムが持つdata属性の値を取得する
-        function get_setting_values_in_item(target, data) {
-            var itemData = target.data(data);
-            if (!Array.isArray(itemData)) {
-                itemData = [itemData];
-            }
-            return itemData;
-        }
-
-        // 配列を比較し、共通するアイテムがあるかどうかを調べる
-        function array_match_check(arr1, arr2) {
-            // 絞り込み対象かどうか調べる
-            var arrCheck = false;
-            for (var i = 0; i < arr1.length; i++) {
-                if (arr2.indexOf(arr1[i]) >= 0) {
-                    arrCheck = true;
-                    break;
-                }
-            }
-            return arrCheck;
-        }
-
         // $(function () {
         //     var filterBtn = '.filter_btn';
         //     var worksUnit = '.WORKS_unit';
@@ -381,76 +281,191 @@
         //         $(`${filterBtn} input`).prop('checked', false);
         //         $(allBtn).prop('checked', true);
         //     }
-
         //     // 絞り込み条件が変更された時
-        //     $(document).on('change', `${filterBtn} input`, function () {
+        //     $(document).on('change', filterBtn + 'input', function () {
         //         search_filter();
         //     });
+        // })
 
-        //     // 絞り込み関数
-        //     function search_filter() {
-        //         $(worksUnit).removeClass(hideClass); // リセット
+        // // アイテムの絞り込み
+        // function search_filter() {
+        //     $(worksUnit).removeClass(hideClass);
 
-        //         // 各フィルタボタンごとに処理
-        //         $(`${filterBtn}`).each(function () {
-        //             var name = $(this).find('input').attr('name');
-        //             var searchData = get_selected_input_items(name);
+        //     for (var i = 0; i < $(filterBtn).length; i++) {
+        //         var name = $(filterBtn).eq(i).find('input').attr('name');
+        //         // 選択されている項目を取得
+        //         var searchData = get_selected_input_items(name);
 
-        //             if (searchData.length === 0) return;
+        //         // 選択されている項目はなし、またはALLの場合は飛ばす
+        //         if (searchData.length === 0 || searchData[0] === '') {
+        //             continue;
+        //         }
 
-        //             $(worksUnit).each(function () {
-        //                 var itemData = get_setting_values_in_item($(this), name);
-        //                 if (!array_match_check(itemData, searchData)) {
-        //                     $(this).addClass(hideClass);
-        //                 }
-        //             });
-        //         });
+        //         for (var j = 0; j < $(worksUnit).length; j++) {
+        //             // アイテムに設定している項目を取得
+        //             var itemData = get_setting_values_in_item($(worksUnit).eq(j), name);
+        //             // 絞り込み対象かどうか調べる
+        //             var check = array_match_check(itemData, searchData);
+        //             if (!check) {
+        //                 $(worksUnit).eq(j).addClass(hideClass);
+        //             }
+        //         }
+        //     }
 
-        //         // 表示される要素がない場合
-        //         if ($(worksUnit).not(`.${hideClass}`).length === 0) {
-        //             $('.WORKS_area').append('<div class="disnone">表示するものがありません</div>');
-        //         } else {
+        //     // 表示されるアイテムがない時
+        //     if ($('.disnone').length) {
+        //         if ($('.worksUnit').length != $('hidden').lenght) {
         //             $('.disnone').remove();
         //         }
-
-        //         // ALLボタンの制御
-        //         if ($(`${filterBtn} input:checked`).length === 0) {
-        //             $(allBtn).prop('checked', true);
-        //         } else {
-        //             $(allBtn).prop('checked', false);
+        //         return false;
+        //     } else
+        //         if ($('.WORKS_unit').length == $('.hidden').length) {
+        //             $('.WORKS_area').append('<div class="disnone">表示するものがありません</div>');
         //         }
+
+        //     // ALLボタンの制御
+        //     if (!$(filterBtn + 'input').is(':checked')) {
+        //         $(allBtn).prop('checked', true); // 全て未選択ならALLを選択
+        //     } else {
+        //         $(allBtn).prop('checked', false); // いずれか選択されたらALLを非選択
         //     }
 
-        //     // ALLボタンが押された時
         //     $(allBtn).on('click', function () {
-        //         $(`${filterBtn} input`).prop('checked', false);
-        //         $(worksUnit).removeClass(hideClass);
+        //         $(filterBtn + 'input').prop('checked', false);
         //         $('.disnone').remove();
+
+        //         $(worksUnit).removeClass(hideClass);
         //     });
+        // }
 
-        //     // 選択されている項目を取得
-        //     function get_selected_input_items(name) {
-        //         var searchData = [];
-        //         $(`[name=${name}]:checked`).each(function () {
-        //             searchData.push($(this).val());
-        //         });
-        //         return searchData;
+        // // フィルタボタンで選択されている値を取得
+        // function get_selected_input_items(name) {
+        //     var searchData = [];
+        //     $('[name=' + name + ']:checked').each(function () {
+        //         searchData.push($(this).val());
+        //     });
+        //     // console.log('searchData:'+searchData);
+        //     return searchData;
+        // }
+
+        // // アイテムが持つdata属性の値を取得する
+        // function get_setting_values_in_item(target, data) {
+        //     var itemData = target.data(data);
+        //     if (!Array.isArray(itemData)) {
+        //         itemData = [itemData];
         //     }
+        //     return itemData;
+        // }
 
-        //     // アイテムのデータを取得
-        //     function get_setting_values_in_item(target, data) {
-        //         var itemData = target.data(data);
-        //         if (!Array.isArray(itemData)) {
-        //             itemData = [itemData];
+        // // 配列を比較し、共通するアイテムがあるかどうかを調べる
+        // function array_match_check(arr1, arr2) {
+        //     // 絞り込み対象かどうか調べる
+        //     var arrCheck = false;
+        //     for (var i = 0; i < arr1.length; i++) {
+        //         if (arr2.indexOf(arr1[i]) >= 0) {
+        //             arrCheck = true;
+        //             break;
         //         }
-        //         return itemData;
         //     }
+        //     return arrCheck;
+        // }
 
-        //     // 配列比較関数
-        //     function array_match_check(arr1, arr2) {
-        //         return arr1.some(value => arr2.includes(value));
-        //     }
-        // });
+        // -- 絞り込みフィルター --
+        $(function () {
+            var filterBtn = '.filter_btn';
+            var worksUnit = '.WORKS_unit';
+            var hideClass = 'hidden';
+            var allBtn = 'input[name="all"]';
+
+            // ページロード時の初期化
+            if (performance.navigation.type === 1) {
+                $(`${filterBtn} input`).prop('checked', false);
+                $(allBtn).prop('checked', true);
+            }
+
+            // ALLボタンが押された時の処理
+            $(allBtn).on('change', function () {
+                if ($(this).is(':checked')) {
+                    $(worksUnit).removeClass(hideClass); // 全て表示
+                    $('.disnone').remove(); // "表示するものがありません" を削除
+                    $(`${filterBtn} input`).not(allBtn).prop('checked', false); // 他のボタンを解除
+                }
+            });
+
+            // 絞り込み条件が変更された時
+            $(document).on('change', `${filterBtn} input:not(${allBtn})`, function () {
+                const currentCategoryName = $(this).attr('name');
+                // カテゴリの選択が解除されたらALLを選択
+                if ($(`${filterBtn} input:not(${allBtn}):checked`).length === 0) {
+                    $(allBtn).prop('checked', true);
+                    $(worksUnit).removeClass(hideClass); // 全て表示
+                    $('.disnone').remove(); // "表示するものがありません" を削除
+                } else {
+                    // ALL以外が選択された時
+                    $(allBtn).prop('checked', false); // ALLボタンを解除
+                    $(`${filterBtn} input`).each(function () {
+                        if ($(this).attr('name') !== currentCategoryName) {
+                            $(this).prop('checked', false); // 他のボタンを解除
+                        }
+                    });
+                    search_filter();
+                }
+            });
+
+            // 絞り込み関数
+            function search_filter() {
+                $(worksUnit).removeClass(hideClass); // リセット
+
+                // 各フィルタボタンごとに処理
+                $(`${filterBtn}`).each(function () {
+                    var name = $(this).find('input').attr('name');
+                    var searchData = get_selected_input_items(name);
+
+                    if (searchData.length === 0) return;
+
+                    $(worksUnit).each(function () {
+                        var itemData = get_setting_values_in_item($(this), name);
+                        if (!array_match_check(itemData, searchData)) {
+                            $(this).addClass(hideClass);
+                        } else {
+                            $(this).removeClass(hideClass);
+                        }
+                    });
+                });
+
+                // 表示される要素がない場合
+                if ($(worksUnit).not(`.${hideClass}`).length === 0) {
+                    if ($('.disnone').length === 0) {
+                        $('.WORKS_area').append('<div class="disnone">表示するものがありません</div>');
+                    }
+                } else {
+                    $('.disnone').remove();
+                }
+            }
+
+            // 選択されている項目を取得
+            function get_selected_input_items(name) {
+                var searchData = [];
+                $(`[name=${name}]:checked`).each(function () {
+                    searchData.push($(this).val());
+                });
+                return searchData;
+            }
+
+            // アイテムのデータを取得
+            function get_setting_values_in_item(target, data) {
+                var itemData = target.data('category');
+                if (typeof itemData === 'string') {
+                    itemData = itemData.split(' '); // スペースで分割
+                }
+                return itemData;
+            }
+
+            // 配列比較関数
+            function array_match_check(arr1, arr2) {
+                return arr1.some(value => arr2.includes(value)); // 配列同士で一致があるかチェック
+            }
+        });
 
     </script>
 </body>

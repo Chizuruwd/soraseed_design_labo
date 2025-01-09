@@ -164,8 +164,8 @@ header {
 }
 
 /* -- コンセプト -- */
-
-.concept_slider_wrap {
+/* slick用 */
+/* .concept_slider_wrap {
     background: #e1f2f2;
     max-width: 1100px;
     width: 81%;
@@ -178,14 +178,10 @@ header {
     align-items: center;
     justify-content: center;
 }
-/* .concept_item {
-    margin: 0 auto;
-} */
 .concept_item img {
     max-width: 900px;
     width: 82%;
     margin: 0 auto;
-    /* margin-top: 7%; */
 }
 .concept-slider .slick-slide {
     transform-origin: left center;
@@ -199,9 +195,9 @@ header {
 .concept-slider .slick-next {
     transform: rotateY(-90deg);
     opacity: 0;
-}
-/* 矢印の見た目 */
-.slide-arrow {
+} */
+/* 矢印の見た目
+ .slide-arrow {
     cursor: pointer;
     width: 34px;
     position: absolute;
@@ -212,8 +208,66 @@ header {
 }
 .next-arrow {
     right: 9%;
-}
+} */
 
+/* bookblock用 */
+.concept_slider_wrap {
+    background: #e1f2f2;
+    max-width: 1100px;
+    width: 81%;
+    padding: 7% 0;
+    margin: 0 auto;
+    margin-bottom: 125px;
+    position: relative;
+}
+.bb-bookblock {
+    /* width: 1100px; */
+    /* height: 700px; */
+    width: 900px;
+    height: 500px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 100;
+    -webkit-perspective: 1300px;
+    -moz-perspective: 1300px;
+    perspective: 1300px;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.concept_item {
+    background: #e1f2f2;
+    /* max-width: 1100px; */
+    /* width: 81%; */
+    /* padding: 7% 0; */
+    margin: 0 auto;
+    /* margin-bottom: 125px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bb-bookblock picture {
+    max-width: 900px;
+    /* width: 82%; */
+    margin: 0 auto;
+    /* height: 500px; */
+}
+/* 矢印 */
+.bb-arrow {
+    cursor: pointer;
+    width: 34px;
+    position: absolute;
+    bottom: -18px;
+}
+.bb-custom-icon {
+    display: block;
+}
+.bb-custom-icon-arrow-left {
+    left: 9%;
+}
+.bb-custom-icon-arrow-right {
+    right: 9%;
+}
 /* -- プロフィール -- */
 .profile_wrap {
     max-width: 1100px;
@@ -311,7 +365,7 @@ h4 {
     height: 7px;
     background: #564843;
     position: absolute;
-    top: 13%;
+    top: 7%;
     left: calc(50% - 3.5px);
 }
 /* 横線 */
@@ -322,7 +376,7 @@ h4 {
     height: 1px;
     background: #564843;
     position: absolute;
-    top: calc(13% + 3.5px);
+    top: calc(7% + 3.5px);
     left: 50%;
 }
 .timeline li:nth-child(even) .timeline_ttl::after {
@@ -332,7 +386,7 @@ h4 {
     height: 1px;
     background: #564843;
     position: absolute;
-    top: calc(13% + 3.5px);
+    top: calc(7% + 3.5px);
     left: calc(50% - 5%);
 }
 .timeline_box {
@@ -359,9 +413,8 @@ h4 {
         font-size: 27px;
     }
     .timeline {
-        /* background-image: url(../images/sp_my_story_tree@2x.png); */
-        background-size: cover;
-        background-position: left -660px bottom;
+        background-size: 180%;
+        background-position: left 100% bottom;
     }
     /* 縦線 */
     .timeline::before {
@@ -384,11 +437,13 @@ h4 {
     }
     /* マーカー */
     .timeline_ttl::before {
+        top: 5%;
         left: calc(8% - 3.5px);
     }
     /* 横線 */
     .timeline li:nth-child(odd) .timeline_ttl::after,
     .timeline li:nth-child(even) .timeline_ttl::after {
+        top: calc(5% + 3.5px);
         left: 8%;
         width: 8%;
     }
@@ -402,6 +457,20 @@ h4 {
     .timeline_arrow::before {
         width: 5%;
         left: 8%;
+    }
+}
+/* ~600px */
+@media screen and (max-width: 600px) {
+    .timeline {
+        background-size: 245%;
+        background-position: left 80% bottom;
+    }
+}
+/* ~300px */
+@media screen and (max-width: 380px) {
+    .timeline {
+        background-size: 500%;
+        background-position: left 60% bottom;
     }
 }
 
@@ -448,6 +517,21 @@ h4 {
     display: inline-block;
     text-align: left;
 }
+/* 980~1210px */
+@media screen and (max-width: 1210px) {
+    .favorite_mask p {
+        width: 80%;
+        font-size: 14px;
+        font-weight: 300;
+    }
+}
+/* 768~979px */
+@media screen and (max-width: 979px) {
+    .favorite_mask p {
+        font-size: 12px;
+        line-height: 1.41;
+    }
+}
 /* ~767px */
 @media screen and (max-width: 767px) {
     .favorite_item {
@@ -459,9 +543,6 @@ h4 {
     }
     .favorite_mask p {
         width: 87%;
-        font-size: 12px;
-        font-weight: 300;
-        line-height: 1.41;
         letter-spacing: -0.04em;
     }
     .favorite03 {
@@ -483,7 +564,13 @@ h4 {
         order: 6;
     }
 }
-
+/* ~767px */
+@media screen and (max-width: 767px) {
+    .favorite_mask p {
+        width: 90%;
+        font-size: 10px;
+    }
+}
 /* -- フッター -- */
 footer {
     margin-top: 150px;

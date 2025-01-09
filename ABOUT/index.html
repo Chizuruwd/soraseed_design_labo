@@ -6,21 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soraseed Design Labo</title>
     <!-- slick CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
-    <!-- BookBlock css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/codrops/BookBlock/css/bookblock.css">
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"> -->
     <!-- resetCSS -->
     <link rel="stylesheet" href="../css/reset.css">
+    <!-- BookBlock css -->
+    <link rel="stylesheet" type="text/css" href="../BookBlock/css/bookblock.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../BookBlock/css/demo1.css"> -->
     <!-- CSS -->
     <link rel="stylesheet" href="./style.css">
+    <!-- Modernizr JS(BookBlockで必要) -->
+    <script src="../BookBlock/js/modernizr.custom.js"></script>
     <!-- jQuery JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- slick JS -->
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
     <!-- BookBlock JS -->
-    <script src="https://cdn.jsdelivr.net/gh/codrops/BookBlock/js/jquery.bookblock.min.js"></script>
+    <script src="../BookBlock/js/jquerypp.custom.js"></script>
+    <script src="../BookBlock/js/jquery.bookblock.min.js"></script>
     <!-- Webフォント -->
     <script>
         (function (d) {
@@ -67,7 +71,8 @@
         </div>
     </header>
     <!-- コンセプト -->
-    <section class="concept">
+    <!-- slick用 -->
+    <!-- <section class="concept">
         <div class="concept_slider_wrap">
             <div class="concept_slider">
                 <div class="concept_item">
@@ -102,8 +107,59 @@
                 </div>
             </div>
         </div>
+    </section> -->
+
+    <section class="concept">
+        <!-- bookblockページ部分 -->
+        <div class="main clearfix">
+            <div class="bb-custom-wrapper concept_slider_wrap">
+                <div id="bb-bookblock" class="bb-bookblock concept_slider">
+                    <div class="bb-item concept_item">
+                        <picture>
+                            <source srcset="../images/sp_concept01@2x.png" media="(max-width:767px)">
+                            <img src="../images/concept01@2x.png" alt="コンセプトページ1">
+                        </picture>
+                    </div>
+                    <div class="bb-item concept_item">
+                        <picture>
+                            <source srcset="../images/sp_concept02@2x.png" media="(max-width:767px)">
+                            <img src="../images/concept02@2x.png" alt="コンセプトページ2">
+                        </picture>
+                    </div>
+                    <div class="bb-item concept_item">
+                        <picture>
+                            <source srcset="../images/sp_concept03@2x.png" media="(max-width:767px)">
+                            <img src="../images/concept03@2x.png" alt="コンセプトページ3">
+                        </picture>
+                    </div>
+                    <div class="bb-item concept_item">
+                        <picture>
+                            <source srcset="../images/sp_concept04@2x.png" media="(max-width:767px)">
+                            <img src="../images/concept04@2x.png" alt="コンセプトページ4">
+                        </picture>
+                    </div>
+                    <div class="bb-item concept_item">
+                        <picture>
+                            <source srcset="../images/sp_concept05@2x.png" media="(max-width:767px)">
+                            <img src="../images/concept05@2x.png" alt="コンセプトページ5">
+                        </picture>
+                    </div>
+                </div>
+                <!-- めくるボタン -->
+                <nav class="bb-arrow">
+                    <!-- <a id="bb-nav-first" href="#" class="bb-custom-icon bb-custom-icon-first">First page</a> -->
+                    <a id="bb-nav-prev" href="#" class="bb-custom-icon bb-custom-icon-arrow-left"><img
+                            src="../images/arrow_left.svg" alt="戻る"></a>
+                    <a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right"><img
+                            src="../images/arrow_right.svg" alt="進む"></a>
+                    <!-- <a id="bb-nav-last" href="#" class="bb-custom-icon bb-custom-icon-last">Last page</a> -->
+                </nav>
+            </div>
+        </div>
     </section>
-    <!-- プロフィール -->
+
+
+    <!--- プロフィール -->
     <section class="profile">
         <div class="profile_wrap">
             <div class="profile_text">
@@ -311,7 +367,7 @@
     <!-- ページトップアイコン -->
     <a class="page_top" href="#header"><img src="../images/pagetop_icon@2x.png" alt="ページトップ"></a>
 
-    <!-- JavaScript -->
+    <!----- JavaScript ----->
     <script>
         $(function () {
             $('.openbtn').on('click', function () {
@@ -324,21 +380,137 @@
             })
 
             // スライダー
-            $('.concept_slider').slick({
-                // autoplay: true,
-                infinite: true,
-                arrows: true,
-                prevArrow: '<div class="slide-arrow prev-arrow"><img src="../images/arrow_left.svg" class="slide-arrow prev-arrow"></div>',
-                nextArrow: '<div class="slide-arrow next-arrow"><img src="../images/arrow_right.svg" class="slide-arrow next-arrow"></div>',
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                speed: 300,
-                cssEase: 'ease-in-out',
+            // $('.concept_slider').slick({
+            //     autoplay: true,
+            //     infinite: true,
+            //     arrows: true,
+            //     prevArrow: '<div class="slide-arrow prev-arrow"><img src="../images/arrow_left.svg" class="slide-arrow prev-arrow"></div>',
+            //     nextArrow: '<div class="slide-arrow next-arrow"><img src="../images/arrow_right.svg" class="slide-arrow next-arrow"></div>',
+            //     slidesToShow: 1,
+            //     slidesToScroll: 1,
+            //     speed: 300,
+            //     cssEase: 'ease-in-out',
 
-            })
+            // })
 
         })
+        // bookblock
+        $(function () {
+            $('#bb-bookblock').bookblock({
+                orientation: 'vertical',
+                speed: 800,
+                shadowFlip: 0.7,
+                direction: 'ltr'
+            });
+
+            //めくるボタン
+            $('#bb-nav-next').on('click', function () {
+                $('#bb-bookblock').bookblock('next');
+                return false;
+            });
+
+            $('#bb-nav-prev').on('click', function () {
+                $('#bb-bookblock').bookblock('prev');
+                return false;
+            });
+
+            $('#bb-nav-first').on('click', function () {
+                $('#bb-bookblock').bookblock('first');
+                return false;
+            });
+
+            $('#bb-nav-last').on('click', function () {
+                $('#bb-bookblock').bookblock('last');
+                return false;
+            });
+
+        });
     </script>
+
+    <!-- bookblock -->
+    <!-- <script>
+        var Page = (function () {
+
+            var config = {
+                $bookBlock: $('#bb-bookblock'),
+                $navNext: $('#bb-nav-next'),
+                $navPrev: $('#bb-nav-prev'),
+                $navFirst: $('#bb-nav-first'),
+                $navLast: $('#bb-nav-last')
+            },
+                init = function () {
+                    config.$bookBlock.bookblock({
+                        speed: 800,
+                        shadowSides: 0.8,
+                        shadowFlip: 0.7
+                    });
+                    initEvents();
+                },
+                initEvents = function () {
+
+                    var $slides = config.$bookBlock.children();
+
+                    // add navigation events
+                    config.$navNext.on('click touchstart', function () {
+                        config.$bookBlock.bookblock('next');
+                        return false;
+                    });
+
+                    config.$navPrev.on('click touchstart', function () {
+                        config.$bookBlock.bookblock('prev');
+                        return false;
+                    });
+
+                    config.$navFirst.on('click touchstart', function () {
+                        config.$bookBlock.bookblock('first');
+                        return false;
+                    });
+
+                    config.$navLast.on('click touchstart', function () {
+                        config.$bookBlock.bookblock('last');
+                        return false;
+                    });
+
+                    // add swipe events
+                    $slides.on({
+                        'swipeleft': function (event) {
+                            config.$bookBlock.bookblock('next');
+                            return false;
+                        },
+                        'swiperight': function (event) {
+                            config.$bookBlock.bookblock('prev');
+                            return false;
+                        }
+                    });
+
+                    // add keyboard events
+                    $(document).keydown(function (e) {
+                        var keyCode = e.keyCode || e.which,
+                            arrow = {
+                                left: 37,
+                                up: 38,
+                                right: 39,
+                                down: 40
+                            };
+
+                        switch (keyCode) {
+                            case arrow.left:
+                                config.$bookBlock.bookblock('prev');
+                                break;
+                            case arrow.right:
+                                config.$bookBlock.bookblock('next');
+                                break;
+                        }
+                    });
+                };
+
+            return { init: init };
+
+        })();
+    </script>
+    <script>
+        Page.init();
+    </script> -->
 </body>
 
 </html>
