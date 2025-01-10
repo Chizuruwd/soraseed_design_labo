@@ -3,7 +3,7 @@
 body {
     background-color: #f9f7ef;
 }
-/* ヘッダー */
+/* -- ヘッダー -- */
 header {
     position: relative;
     height: 80px;
@@ -13,7 +13,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
     position: fixed;
     top: 0;
     left: 0;
@@ -23,14 +22,26 @@ header {
 }
 .header_logo {
     width: 150px;
-    position: absolute;
+    position: relative;
     top: 20px;
     left: 20px;
+    z-index: 10002;
+}
+.color_logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.no_scroll {
+    overflow: hidden;
 }
 
 /* メニュー */
 .white_logo {
     display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .global_nav {
     display: none;
@@ -40,7 +51,6 @@ header {
     width: 32px;
     height: 32px;
     cursor: pointer;
-    /* 位置の調整 */
     position: absolute;
     top: 35px;
     right: 30px;
@@ -52,7 +62,6 @@ header {
     height: 2px;
     text-align: right;
     background: #7db8c3;
-    /* 位置の調整 */
     position: relative;
     top: 12px;
     right: 0;
@@ -64,7 +73,6 @@ header {
     width: 32px;
     height: 2px;
     background: #7db8c3;
-    /* 位置の調整 */
     position: absolute;
     transition: 0.5s;
     top: -10px;
@@ -74,12 +82,10 @@ header {
     content: "MENU";
     font-size: 10px;
     color: #7db8c3;
-    /* 位置の調整 */
     position: absolute;
     top: 7px;
     right: 0;
     transition: 0.5s;
-    /* top: 7px; */
 }
 /* ばつ印 */
 .openbtn.open span {
@@ -110,7 +116,6 @@ header {
     left: 0;
     width: 100%;
     height: 100vh;
-    /* background: rgba(125, 184, 195, 0.9); */
     background-color: #ffffff;
     background-image: url("../images/FV_flower.png");
     background-repeat: no-repeat;
@@ -123,7 +128,6 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     margin-top: 170px;
     height: 100%;
 }
@@ -141,8 +145,29 @@ header {
 .SNS_btn li img {
     height: 55px;
 }
+/* ~767px */
+@media screen and (max-width: 767px) {
+    header {
+        height: 40px;
+        margin-bottom: 50px;
+    }
+    .header_logo {
+        top: 15px;
+        left: 17px;
+    }
+    .header_logo img {
+        width: 100px;
+    }
+    .openbtn {
+        top: 25px;
+        right: 18px;
+    }
+}
 
-/* WORKS */
+/* -- WORKS -- */
+.WORKS {
+    padding: 0 2%;
+}
 h3 {
     font-size: 48px;
     color: #489baa;
@@ -187,9 +212,6 @@ h3 {
 }
 
 /* WORKSエリア */
-.WORKS {
-    margin-bottom: 275px;
-}
 .WORKS_area {
     margin: 0 auto;
     max-width: 1100px;
@@ -214,6 +236,7 @@ h3 {
 }
 .WORKS_item img {
     max-width: 350px;
+    width: 100%;
     border-radius: 3%;
 }
 .WORKS_unit_text {
@@ -251,8 +274,8 @@ h3 {
     display: inline-block;
 }
 .coming {
-    width: 350px;
-    height: 350px;
+    width: 100%;
+    max-width: 350px;
     border-radius: 3%;
     background-color: #aaa3a1;
     border: solid 1px #eeedec;
@@ -261,11 +284,17 @@ h3 {
     justify-content: center;
     align-items: center;
 }
+.coming span {
+    display: block;
+    width: 350px;
+    aspect-ratio: 1 / 1;
+    /* padding-top: 100%; */
+}
 .hidden {
     display: none;
 }
 
-/* フッター */
+/* -- フッター -- */
 footer {
     margin-top: 150px;
 }
@@ -276,7 +305,7 @@ footer {
     display: block;
     width: 100%;
 }
-/* ページトップアイコン */
+/* -- ページトップアイコン -- */
 .page_top {
     width: 100px;
     position: fixed;
@@ -285,6 +314,9 @@ footer {
     z-index: 9999;
 }
 @media screen and (max-width: 767px) {
+    .WORKS {
+        padding: 0 5%;
+    }
     h3 {
         font-size: 36px;
     }
@@ -292,6 +324,9 @@ footer {
 
 /* ▼ WORKS詳細ページ ▼------------------------------------------ */
 /* モックアップ画像 */
+.WORK {
+    padding: 0 5%;
+}
 .MockUp {
     max-width: 1100px;
     margin: 0 auto;
@@ -433,8 +468,22 @@ h5 {
 }
 
 @media screen and (max-width: 767px) {
+    /* WORKSテキスト */
+    h4 {
+        margin: 30px 0 45px 0;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .WORKS_category li {
+        font-size: 14px;
+    }
+    .WORKS_category li:not(:last-child) {
+        margin-bottom: 23px;
+    }
+
     /* モックアップ画像 */
     .MockUp {
+        margin-top: 60px;
         gap: 0;
         align-items: flex-end;
     }
@@ -443,20 +492,34 @@ h5 {
     }
     .MockUp_sp {
         margin-left: -12%;
+        padding-top: 0;
     }
     .text_container {
-        margin-left: 8%;
+        /* margin-left: 8%; */
+        margin: 0 3%;
     }
+
+    /* view moreボタン */
+    .WORKS_btn {
+        width: 40%;
+        min-width: 150px;
+        padding-right: 0;
+    }
+    /* モーダルウインドウ */
+    .modal_content {
+        flex-direction: column;
+    }
+
     /* WORKSテキスト */
     .WORKS_text {
         flex-direction: column;
     }
     .WORKS_category {
-        width: 84%;
+        width: 100%;
         margin-bottom: 40px;
     }
     .WORKS_detail {
-        width: 84%;
+        width: 100%;
         padding-top: 30px;
     }
 
@@ -468,6 +531,7 @@ h5 {
     /* 戻るボタン */
     .back_btn p {
         width: 40%;
+        min-width: 150px;
         font-size: 14px;
     }
 }

@@ -43,20 +43,18 @@
     <header classs="header">
         <div class="header_wrap" id="header">
             <h1 class="header_logo">
-                <img src="../images/logo02.svg" alt="Soraseed Design Labo" class="color_logo
-                ">
-                <img src="../images/logo01.svg" alt="Soraseed Design Labo" class="white_logo
-                ">
+                <img src="../images/logo02.svg" alt="Soraseed Design Labo" class="color_logo">
+                <img src="../images/logo01.svg" alt="Soraseed Design Labo" class="white_logo">
             </h1>
             <div class="openbtn">
                 <span></span>
             </div>
             <nav class="global_nav">
                 <ul>
-                    <li><a href="#Home">Home</a></li>
-                    <li><a href="#About">About</a></li>
-                    <li><a href="#Works">Works</a></li>
-                    <li><a href="Contact">Contact</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../ABOUT/index.html">About</a></li>
+                    <li><a href="../WORKS/index.html">Works</a></li>
+                    <li><a href="../CONTACT/index.html">Contact</a></li>
                     <li>
                         <ul class="SNS_btn">
                             <li><a href="https://x.com/Soraseed_wd"><img src="../images/icon_X.svg" alt="X"></a>
@@ -66,10 +64,10 @@
                         </ul>
                     </li>
                 </ul>
-
             </nav>
         </div>
     </header>
+
     <!-- コンセプト -->
     <!-- slick用 -->
     <!-- <section class="concept">
@@ -369,17 +367,32 @@
 
     <!----- JavaScript ----->
     <script>
+        // -- ヘッター --
         $(function () {
+            // メニュー
             $('.openbtn').on('click', function () {
                 $('.openbtn').toggleClass('open');
                 $('.global_nav').fadeToggle();
+                // メニュー展開時はスクロールをロック
+                $("body").toggleClass("no_scroll");
             })
+            // メニュー展開時にロゴの色を変える
             $('.openbtn').on('click', function () {
                 $('.white_logo').fadeToggle();
-                // $('.color_logo').fadeToggle(0);
             })
+            // グローバルナビクリック時にメニューを閉じる
+            $('.global_nav_link').on('click', function () {
+                // $('openbtn').removeClass('open')
+                $('.openbtn').toggleClass('open');
+                $('.global_nav').fadeToggle();
+                $("body").toggleClass("no_scroll");
+            })
+        })
 
-            // スライダー
+
+        // -- スライダー --
+        $(function () {
+            // slick
             // $('.concept_slider').slick({
             //     autoplay: true,
             //     infinite: true,
@@ -390,12 +403,9 @@
             //     slidesToScroll: 1,
             //     speed: 300,
             //     cssEase: 'ease-in-out',
-
             // })
 
-        })
-        // bookblock
-        $(function () {
+            // bookblock
             $('#bb-bookblock').bookblock({
                 orientation: 'vertical',
                 speed: 800,

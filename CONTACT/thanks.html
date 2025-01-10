@@ -30,26 +30,24 @@
         <header classs="header">
             <div class="header_wrap" id="header">
                 <h1 class="header_logo">
-                    <img src="../images/logo02.svg" alt="Soraseed Design Labo" class="color_logo
-            ">
-                    <img src="../images/logo01.svg" alt="Soraseed Design Labo" class="white_logo
-            ">
+                    <img src="../images/logo02.svg" alt="Soraseed Design Labo" class="color_logo">
+                    <img src="../images/logo01.svg" alt="Soraseed Design Labo" class="white_logo">
                 </h1>
                 <div class="openbtn">
                     <span></span>
                 </div>
                 <nav class="global_nav">
                     <ul>
-                        <li><a href="#Home">Home</a></li>
-                        <li><a href="#About">About</a></li>
-                        <li><a href="#Works">Works</a></li>
-                        <li><a href="Contact">Contact</a></li>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../ABOUT/index.html">About</a></li>
+                        <li><a href="../WORKS/index.html">Works</a></li>
+                        <li><a href="../CONTACT/index.html">Contact</a></li>
                         <li>
                             <ul class="SNS_btn">
                                 <li><a href="https://x.com/Soraseed_wd"><img src="../images/icon_X.svg" alt="X"></a>
                                 </li>
                                 <li><a href="https://www.instagram.com/soraseed_wd/"><img
-                                            src="../images/icon_Instagram.svg" alt="Instagram"></a></li>
+                                            src="../images/icon_Instagram.svg" alt="icon_Instagram"></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -57,9 +55,10 @@
             </div>
         </header>
 
+
         <section class="thanks_page">
             <h3>THANK YOU</h3>
-            <div class="CONTACT_lead">
+            <div class="CONTACT_lead thanks_lead">
                 <p>お問い合わせありがとうございます。<br>
                     内容を確認後、2営業日以内に返信いたします。<br>
                     <br>
@@ -90,14 +89,25 @@
     </div>
     <!-- JavaScript -->
     <script>
+        // -- ヘッター --
         $(function () {
+            // メニュー
             $('.openbtn').on('click', function () {
                 $('.openbtn').toggleClass('open');
                 $('.global_nav').fadeToggle();
+                // メニュー展開時はスクロールをロック
+                $("body").toggleClass("no_scroll");
             })
+            // メニュー展開時にロゴの色を変える
             $('.openbtn').on('click', function () {
-                $('.white_logo').toggleClass('open');
-                $('.color_logo').fadeToggle();
+                $('.white_logo').fadeToggle();
+            })
+            // グローバルナビクリック時にメニューを閉じる
+            $('.global_nav_link').on('click', function () {
+                // $('openbtn').removeClass('open')
+                $('.openbtn').toggleClass('open');
+                $('.global_nav').fadeToggle();
+                $("body").toggleClass("no_scroll");
             })
         })
     </script>

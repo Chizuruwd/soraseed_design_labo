@@ -290,6 +290,7 @@
                 // $('openbtn').removeClass('open')
                 $('.openbtn').toggleClass('open');
                 $('.global_nav').fadeToggle();
+                // メニュー展開時はスクロールさせない
                 $("body").toggleClass("no_scroll");
             })
 
@@ -346,7 +347,7 @@
                     plantImage.classList.add("tree");
                     plantImage.alt = "木";
                 } else {
-                    // 木の状態でクリックされた場合、隠しページに遷移
+                    // 木の状態でクリックされた場合、隠しページへ
                     window.location.href = "./SECRET/index.html";
                 }
             });

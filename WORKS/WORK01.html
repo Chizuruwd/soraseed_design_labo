@@ -54,20 +54,18 @@
     <header classs="header">
         <div class="header_wrap" id="header">
             <h1 class="header_logo">
-                <img src="../images/logo02.svg" alt="Soraseed Design Labo" class="color_logo
-                ">
-                <img src="../images/logo01.svg" alt="Soraseed Design Labo" class="white_logo
-                ">
+                <img src="../images/logo02.svg" alt="Soraseed Design Labo" class="color_logo">
+                <img src="../images/logo01.svg" alt="Soraseed Design Labo" class="white_logo">
             </h1>
             <div class="openbtn">
                 <span></span>
             </div>
             <nav class="global_nav">
                 <ul>
-                    <li><a href="#Home">Home</a></li>
-                    <li><a href="#About">About</a></li>
-                    <li><a href="#Works">Works</a></li>
-                    <li><a href="Contact">Contact</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../ABOUT/index.html">About</a></li>
+                    <li><a href="../WORKS/index.html">Works</a></li>
+                    <li><a href="../CONTACT/index.html">Contact</a></li>
                     <li>
                         <ul class="SNS_btn">
                             <li><a href="https://x.com/Soraseed_wd"><img src="../images/icon_X.svg" alt="X"></a>
@@ -90,31 +88,33 @@
             <img src="../images/work01_MockUp_PC@2x.png" alt="PCモックアップ画像" class="MockUp_PC">
             <img src="../images/work01_MockUp_sp@2x.png" alt="mobileモックアップ画像" class="MockUp_sp">
         </div>
-        <!-- view moreボタン -->
-        <div class="WORKS_btn">
-            <button data-remodal-target="modal_work01">
-                <picture>
-                    <source srcset="../images/sp_WORKS_btn@2x.png" media="(max-width:767px)">
-                    <img src="../images/WORKS_btn@2x.png" alt="view moreボタン">
-                </picture>
-            </button>
-        </div>
-        <!-- モーダルウインドウ -->
-        <div class="remodal" data-remodal-id="modal_work01" date-remodal-options="hashTracking: false">
-            <!-- 閉じるボタン -->
-            <button data-remodal-action="close" class="remodal-close"></button>
-            <div class="modal_content">
-                <div class="modal_item">
-                    <h6>PC</h6>
-                    <img src="../images/WORK01_PC@2x-80.jpg" alt="PCモックアップ画像">
-                </div>
-                <div class="modal_item">
-                    <h6>mobile</h6>
-                    <img src="../images/WORK01_sp@2x-80.jpg" alt="Mobileモックアップ画像">
+        <!-- PC版モーダルウインドウ -->
+        <div class="all_modal">
+            <!-- view moreボタン -->
+            <div class="WORKS_btn">
+                <button data-remodal-target="modal_work01">
+                    <picture>
+                        <source srcset="../images/sp_WORKS_btn@2x.png" media="(max-width:767px)">
+                        <img src="../images/WORKS_btn@2x.png" alt="view moreボタン">
+                    </picture>
+                </button>
+            </div>
+            <!-- モーダルウインドウ -->
+            <div class="remodal" data-remodal-id="modal_work01" date-remodal-options="hashTracking: false">
+                <!-- 閉じるボタン -->
+                <button data-remodal-action="close" class="remodal-close"></button>
+                <div class="modal_content">
+                    <div class="modal_item">
+                        <h6>PC</h6>
+                        <img src="../images/WORK01_PC@2x-80.jpg" alt="PCモックアップ画像">
+                    </div>
+                    <div class="modal_item">
+                        <h6>mobile</h6>
+                        <img src="../images/WORK01_sp@2x-80.jpg" alt="Mobileモックアップ画像">
+                    </div>
                 </div>
             </div>
         </div>
-
         <!-- WORKSテキスト -->
         <div class="text_container">
             <h4>ポートフォリオサイト</h4>
@@ -172,16 +172,28 @@
 
     <!-- JavaScript -->
     <script>
+        // -- ヘッター --
         $(function () {
+            // メニュー
             $('.openbtn').on('click', function () {
                 $('.openbtn').toggleClass('open');
                 $('.global_nav').fadeToggle();
+                // メニュー展開時はスクロールをロック
+                $("body").toggleClass("no_scroll");
             })
+            // メニュー展開時にロゴの色を変える
             $('.openbtn').on('click', function () {
-                $('.white_logo').toggleClass('open');
-                $('.color_logo').fadeToggle();
+                $('.white_logo').fadeToggle();
+            })
+            // グローバルナビクリック時にメニューを閉じる
+            $('.global_nav_link').on('click', function () {
+                // $('openbtn').removeClass('open')
+                $('.openbtn').toggleClass('open');
+                $('.global_nav').fadeToggle();
+                $("body").toggleClass("no_scroll");
             })
         })
+
     </script>
 </body>
 

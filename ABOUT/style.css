@@ -12,7 +12,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* position: absolute; */
     position: fixed;
     top: 0;
     left: 0;
@@ -32,6 +31,9 @@ header {
     top: 0;
     left: 0;
 }
+.no_scroll {
+    overflow: hidden;
+}
 
 /* メニュー */
 .white_logo {
@@ -48,7 +50,6 @@ header {
     width: 32px;
     height: 32px;
     cursor: pointer;
-    /* 位置の調整 */
     position: absolute;
     top: 35px;
     right: 30px;
@@ -60,7 +61,6 @@ header {
     height: 2px;
     text-align: right;
     background: #7db8c3;
-    /* 位置の調整 */
     position: relative;
     top: 12px;
     right: 0;
@@ -72,7 +72,6 @@ header {
     width: 32px;
     height: 2px;
     background: #7db8c3;
-    /* 位置の調整 */
     position: absolute;
     transition: 0.5s;
     top: -10px;
@@ -82,12 +81,10 @@ header {
     content: "MENU";
     font-size: 10px;
     color: #7db8c3;
-    /* 位置の調整 */
     position: absolute;
     top: 7px;
     right: 0;
     transition: 0.5s;
-    /* top: 7px; */
 }
 /* ばつ印 */
 .openbtn.open span {
@@ -149,8 +146,11 @@ header {
 }
 /* ~767px */
 @media screen and (max-width: 767px) {
+    header {
+        height: 40px;
+        margin-bottom: 50px;
+    }
     .header_logo {
-        /* width: 100px; */
         top: 15px;
         left: 17px;
     }
@@ -225,6 +225,7 @@ header {
     /* height: 700px; */
     /* width: 900px; */
     width: 82%;
+    /* height: auto; */
     /* height: 500px; */
     /* height: 71%; */
     margin: 0 auto;

@@ -3,7 +3,7 @@
 body {
     background-color: #f9f7ef;
 }
-/* ヘッダー */
+/* -- ヘッダー -- */
 header {
     position: relative;
     height: 80px;
@@ -13,7 +13,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
     position: fixed;
     top: 0;
     left: 0;
@@ -23,14 +22,26 @@ header {
 }
 .header_logo {
     width: 150px;
-    position: absolute;
+    position: relative;
     top: 20px;
     left: 20px;
+    z-index: 10002;
+}
+.color_logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.no_scroll {
+    overflow: hidden;
 }
 
 /* メニュー */
 .white_logo {
     display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 .global_nav {
     display: none;
@@ -40,7 +51,6 @@ header {
     width: 32px;
     height: 32px;
     cursor: pointer;
-    /* 位置の調整 */
     position: absolute;
     top: 35px;
     right: 30px;
@@ -52,7 +62,6 @@ header {
     height: 2px;
     text-align: right;
     background: #7db8c3;
-    /* 位置の調整 */
     position: relative;
     top: 12px;
     right: 0;
@@ -64,7 +73,6 @@ header {
     width: 32px;
     height: 2px;
     background: #7db8c3;
-    /* 位置の調整 */
     position: absolute;
     transition: 0.5s;
     top: -10px;
@@ -74,12 +82,10 @@ header {
     content: "MENU";
     font-size: 10px;
     color: #7db8c3;
-    /* 位置の調整 */
     position: absolute;
     top: 7px;
     right: 0;
     transition: 0.5s;
-    /* top: 7px; */
 }
 /* ばつ印 */
 .openbtn.open span {
@@ -110,7 +116,6 @@ header {
     left: 0;
     width: 100%;
     height: 100vh;
-    /* background: rgba(125, 184, 195, 0.9); */
     background-color: #ffffff;
     background-image: url("../images/FV_flower.png");
     background-repeat: no-repeat;
@@ -123,7 +128,6 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
     margin-top: 170px;
     height: 100%;
 }
@@ -141,8 +145,26 @@ header {
 .SNS_btn li img {
     height: 55px;
 }
+/* ~767px */
+@media screen and (max-width: 767px) {
+    header {
+        height: 40px;
+        margin-bottom: 50px;
+    }
+    .header_logo {
+        top: 15px;
+        left: 17px;
+    }
+    .header_logo img {
+        width: 100px;
+    }
+    .openbtn {
+        top: 25px;
+        right: 18px;
+    }
+}
 
-/* フッター */
+/* -- フッター -- */
 footer {
     margin-top: 150px;
 }
@@ -153,7 +175,7 @@ footer {
     display: block;
     width: 100%;
 }
-/* ページトップアイコン */
+/* -- ページトップアイコン -- */
 .page_top {
     width: 100px;
     position: fixed;
@@ -303,9 +325,6 @@ label {
 }
 
 /* ▼ thanksページ ▼------------------------------------------ */
-/* .thanks_foot {
-    position: relative;
-} */
 .TOP_btn {
     padding: -20px 0 150px 0;
     text-align: center;
@@ -325,6 +344,21 @@ label {
     position: absolute;
     bottom: -5px;
     right: 16%;
+}
+@media screen and (max-width: 767px) {
+    .thanks_lead {
+        padding: 0 8%;
+        margin-bottom: 55px;
+    }
+    .TOP_btn img {
+        min-width: 250px;
+    }
+    .thanks_flower img {
+        width: 40%;
+        min-width: 150px;
+        max-width: 200px;
+        right: 8%;
+    }
 }
 /* フッターの下部固定 */
 .footer_fixed {
