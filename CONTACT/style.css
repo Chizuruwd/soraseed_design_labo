@@ -171,10 +171,52 @@ footer {
 .footer_bud {
     padding-left: 10%;
 }
+.footer_bud:hover {
+    cursor: pointer;
+    transform: scaleY(1.1);
+}
 .footer_soil {
     display: block;
     width: 100%;
 }
+.copy {
+    margin-top: -30px;
+    text-align: center;
+}
+.copy p {
+    font-size: 12px;
+    color: #ffffff;
+}
+.plant_image {
+    position: relative;
+}
+.tree {
+    content: url("../images/TOP_tree.png");
+    max-width: 18%;
+    padding-left: 3%;
+    position: absolute;
+    bottom: -10px;
+}
+/* フッターの下部固定 */
+.footer_fixed {
+    min-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom: 25%;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+/* ~767px */
+@media screen and (max-width: 767px) {
+    .tree {
+        max-width: 50%;
+        bottom: -20px;
+    }
+}
+
 /* -- ページトップアイコン -- */
 .page_top {
     width: 100px;
@@ -182,6 +224,18 @@ footer {
     right: 20px;
     bottom: 20px;
     z-index: 9999;
+}
+.pagetop01,
+.pagetop02 {
+    transition: opacity 2s ease;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.pagetop01.active,
+.pagetop02.active {
+    opacity: 1;
 }
 
 /* ▼ CONTACTページ ▼------------------------------------------ */
@@ -359,16 +413,4 @@ label {
         max-width: 200px;
         right: 8%;
     }
-}
-/* フッターの下部固定 */
-.footer_fixed {
-    min-height: 100vh;
-    box-sizing: border-box;
-    position: relative;
-    padding-bottom: 25%;
-}
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
 }
