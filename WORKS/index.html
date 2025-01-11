@@ -430,8 +430,8 @@
 
             // ページロード時の初期化
             if (performance.navigation.type === 1) {
-                $(`${filterBtn} input`).prop('checked', false);
-                $(allBtn).prop('checked', true);
+                $(`${filterBtn} input`).prop('checked', false); // 全てのフィルタボタンを解除
+                $(allBtn).prop('checked', true); // ALLボタンを選択
             }
 
             // ALLボタンが押された時の処理
@@ -446,9 +446,9 @@
             // 絞り込み条件が変更された時
             $(document).on('change', `${filterBtn} input:not(${allBtn})`, function () {
                 const currentCategoryName = $(this).attr('name');
-                // カテゴリの選択が解除されたらALLを選択
+                // カテゴリの選択が解除されたら
                 if ($(`${filterBtn} input:not(${allBtn}):checked`).length === 0) {
-                    $(allBtn).prop('checked', true);
+                    $(allBtn).prop('checked', true); // ALLボタンを選択
                     $(worksUnit).removeClass(hideClass); // 全て表示
                     $('.disnone').remove(); // "表示するものがありません" を削除
                 } else {
@@ -465,14 +465,14 @@
 
             // 絞り込み関数
             function search_filter() {
-                $(worksUnit).removeClass(hideClass); // リセット
+                $(worksUnit).removeClass(hideClass); // リセット(全て表示)
 
                 // 各フィルタボタンごとに処理
                 $(`${filterBtn}`).each(function () {
-                    var name = $(this).find('input').attr('name');
-                    var searchData = get_selected_input_items(name);
+                    var name = $(this).find('input').attr('name'); // name属性を取得
+                    var searchData = get_selected_input_items(name); // 選択された条件を取得
 
-                    if (searchData.length === 0) return;
+                    if (searchData.length === 0) return; // 選択されている項目がない場合はスキップ
 
                     $(worksUnit).each(function () {
                         var itemData = get_setting_values_in_item($(this), name);
@@ -512,7 +512,7 @@
                 return itemData;
             }
 
-            // 配列比較関数
+            // 配列比較関数(アイテムのデータと絞り込み条件を比較)
             function array_match_check(arr1, arr2) {
                 return arr1.some(value => arr2.includes(value)); // 配列同士で一致があるかチェック
             }
