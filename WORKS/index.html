@@ -80,11 +80,11 @@
                 <label for="all">ALL</label>
             </div>
 
-            <div class="filter_btn">
+            <div class="skill_btn">
                 <input type="checkbox" name="skill" value="design" id="design">
                 <label for="design">デザイン</label>
             </div>
-            <div class="filter_btn">
+            <div class="skill_btn">
                 <input type="checkbox" name="skill" value="coding" id="coding">
                 <label for="coding">コーディング</label>
             </div>
@@ -92,7 +92,7 @@
         <!-- WORKSエリア -->
         <div class="WORKS_area">
             <div class="WORKS_unit" data-category="Website design coding" data-skill="design coding">
-                <a href="">
+                <a href="./WORK01.html">
                     <div class="WORKS_item">
                         <img src="../images/work01@2x-80.jpg" alt="WORKS01">
                         <div class="WORKS_mask">
@@ -108,7 +108,7 @@
                 </div>
             </div>
             <div class="WORKS_unit" data-category="LP design" data-skill="design">
-                <a href="">
+                <a href="./WORK02.html">
                     <div class="WORKS_item">
                         <img src="../images/work02@2x-80.jpg" alt="WORKS02">
                         <div class="WORKS_mask">
@@ -124,7 +124,7 @@
                 </div>
             </div>
             <div class="WORKS_unit" data-category="LP coding" data-skill="coding">
-                <a href="">
+                <a href="./WORK03.html">
                     <div class="WORKS_item">
                         <img src="../images/work03@2x-80.jpg" alt="WORKS03">
                         <div class="WORKS_mask">
@@ -140,7 +140,7 @@
                 </div>
             </div>
             <div class="WORKS_unit" data-category="LP design" data-skill="design">
-                <a href="">
+                <a href="./WORK04.html">
                     <div class="WORKS_item">
                         <img src="../images/work04@2x-80.jpg" alt="WORKS04">
                         <div class="WORKS_mask">
@@ -156,7 +156,7 @@
                 </div>
             </div>
             <div class="WORKS_unit" data-category="banner design" data-skill="design">
-                <a href="">
+                <a href="./WORK05.html">
                     <div class="WORKS_item">
                         <img src="../images/work05@2x-80.jpg" alt="WORKS05">
                         <div class="WORKS_mask">
@@ -172,7 +172,7 @@
                 </div>
             </div>
             <div class="WORKS_unit" data-category="banner design" data-skill="design">
-                <a href="">
+                <a href="./WORK06.html">
                     <div class="WORKS_item">
                         <img src="../images/work06@2x-80.jpg" alt="WORKS06">
                         <div class="WORKS_mask">
@@ -188,7 +188,7 @@
                 </div>
             </div>
             <div class="WORKS_unit" data-category="banner design" data-skill="design">
-                <a href="">
+                <a href="./WORK07.html">
                     <div class="WORKS_item">
                         <img src="../images/work07@2x-80.jpg" alt="WORKS07">
                         <div class="WORKS_mask">
@@ -204,7 +204,7 @@
                 </div>
             </div>
             <div class="WORKS_unit" data-category="banner design" data-skill="design">
-                <a href="">
+                <a href="./WORK08.html">
                     <div class="WORKS_item">
                         <img src="../images/work08@2x-80.jpg" alt="WORKS08">
                         <div class="WORKS_mask">
@@ -224,7 +224,6 @@
                 <div class="WORKS_item">
                     <!-- <img src="" alt=""> -->
                     <div class="coming">
-                        <span></span>
                     </div>
                     <div class="WORKS_mask">
                         <p>
@@ -427,6 +426,7 @@
         // -- 絞り込みフィルター --
         $(function () {
             var filterBtn = '.filter_btn';
+            var skillBtn = '.skill_btn';
             var worksUnit = '.WORKS_unit';
             var hideClass = 'hidden';
             var allBtn = 'input[name="all"]';
@@ -447,9 +447,10 @@
             });
 
             // 絞り込み条件が変更された時
+            // カテゴリボタンが変更された場合
             $(document).on('change', `${filterBtn} input:not(${allBtn})`, function () {
-                const currentCategoryName = $(this).attr('name');
-                // カテゴリの選択が解除されたら
+                const currentCategoryName = $(this).attr('value');
+                // カテゴリ選択が解除されたら
                 if ($(`${filterBtn} input:not(${allBtn}):checked`).length === 0) {
                     $(allBtn).prop('checked', true); // ALLボタンを選択
                     $(worksUnit).removeClass(hideClass); // 全て表示
@@ -458,35 +459,50 @@
                     // ALL以外が選択された時
                     $(allBtn).prop('checked', false); // ALLボタンを解除
                     $(`${filterBtn} input`).each(function () {
-                        if ($(this).attr('name') !== currentCategoryName) {
-                            // $(this).prop('checked', false); // 他のボタンを解除 複数選択するために解除
+                        if ($(this).attr('value') !== currentCategoryName) {
+                            $(this).prop('checked', false); // 他のボタンを解除
                         }
                     });
                     search_filter();
                 }
             });
+            // スキルボタンが変更された場合
+            $(document).on('change', skillBtn, function () {
+                search_filter()
+            })
 
             // 絞り込み関数
             function search_filter() {
                 $(worksUnit).removeClass(hideClass); // リセット(全て表示)
 
-                // 各フィルタボタンごとに処理
-                $(`${filterBtn}`).each(function () {
-                    var name = $(this).find('input').attr('name'); // name属性を取得
-                    var searchData = get_selected_input_items(name); // 選択された条件を取得
+                // // 各フィルタボタンごとに処理
+                // $(`${filterBtn}`).each(function () {
+                //     var name = $(this).find('input').attr('name'); // name属性を取得
+                //     var searchData = get_selected_input_items(name); // 選択された条件を取得
 
-                    if (searchData.length === 0) return; // 選択されている項目がない場合はスキップ
+                //     if (searchData.length === 0) return; // 選択されている項目がない場合はスキップ
 
+                // カテゴリーの絞り込み
+                const selectedCategory = get_selected_input_items('category')
+                if (selectedCategory.length > 0) {
                     $(worksUnit).each(function () {
-                        var itemData = get_setting_values_in_item($(this), name);
-                        if (!array_match_check(itemData, searchData)) {
+                        var itemData = get_setting_values_in_item($(this), 'category');
+                        if (!array_match_check(itemData, selectedCategory)) {
                             $(this).addClass(hideClass);
-                        } else {
-                            $(this).removeClass(hideClass);
                         }
-
                     });
-                });
+                }
+
+                // スキルの絞り込み
+                const selectedSkills = get_selected_input_items('skill')
+                if (selectedSkills.length > 0) {
+                    $(worksUnit).each(function () {
+                        var itemData = get_setting_values_in_item($(this), 'skill');
+                        if (!array_match_check(itemData, selectedSkills)) {
+                            $(this).addClass(hideClass);
+                        }
+                    });
+                }
 
                 // 表示される要素がない場合
                 if ($(worksUnit).not(`.${hideClass}`).length === 0) {
@@ -509,12 +525,7 @@
 
             // アイテムのデータを取得
             function get_setting_values_in_item(target, data) {
-                var itemData = target.data('category');
-                // var itemData = target.data('skill');
-                // var itemData = {
-                //     category: target.data('category'),
-                //     skill: target.data('skill')
-                // };
+                var itemData = target.data(data);
                 if (typeof itemData === 'string') {
                     itemData = itemData.split(' '); // スペース区切りで分割
                 }

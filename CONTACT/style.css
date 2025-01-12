@@ -369,12 +369,20 @@ label {
 .send_btn img {
     width: 100%;
 }
+/* 767~860px */
+@media screen and (max-width: 860px) {
+    label {
+        font-size: 14px;
+        top: -36px;
+        left: 12%;
+    }
+}
+/* ~767px */
 @media screen and (max-width: 767px) {
     .form_block {
         margin-bottom: 45px;
     }
     label {
-        font-size: 14px;
         top: -36px;
         left: 10%;
     }
@@ -388,41 +396,67 @@ label {
 
 /* -- SNSボタン -- */
 .CONTACT_sns {
-    background-color: #7db8c3;
+    /* background-color: #7db8c3; */
+    /* border-radius: 30px; */
     max-width: 530px;
     margin: 0 auto;
     width: 100%;
     height: 60px;
-    border-radius: 30px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+.CONTACT_sns_bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
 .CONTACT_sns_wrap {
-    box-sizing: border-box;
+    width: 100%;
+    /* box-sizing: border-box;
     padding: 10px;
     width: calc(100% - 10px);
     height: 50px;
     border: dashed #ffffff;
-    border-radius: 30px;
+    border-radius: 30px; */
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 8%;
 }
 .CONTACT_sns_wrap p {
     color: #ffffff;
 }
-.CONTACT_sns_wrap img {
+.CONTACT_sns_btn {
+    width: 14%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40%;
+}
+.CONTACT_sns_btn img {
     width: 22px;
     padding: 10px 0;
 }
+
+/* ~767px */
 @media screen and (max-width: 767px) {
     .CONTACT_sns {
-        width: 84%;
+        /* width: 84%; */
+        width: 315px;
+        max-width: 85%;
+    }
+    .CONTACT_sns_wrap {
+        flex-direction: column;
     }
     .CONTACT_sns_wrap p {
         font-size: 12px;
+    }
+    .CONTACT_sns_btn {
+        height: 20px;
     }
 }
 
