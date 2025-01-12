@@ -60,19 +60,19 @@
         <!-- フィルター -->
         <div class="filter_btn_wrap">
             <div class="filter_btn">
-                <input type="checkbox" name="Website" value="Website" id="website">
+                <input type="checkbox" name="category" value="Website" id="website">
                 <label for="website">Webサイト</label>
             </div>
             <div class="filter_btn">
-                <input type="checkbox" name="LP" value="LP" id="LP">
+                <input type="checkbox" name="category" value="LP" id="LP">
                 <label for="LP">LP</label>
             </div>
             <div class="filter_btn">
-                <input type="checkbox" name="banner" value="banner" id="banner">
+                <input type="checkbox" name="category" value="banner" id="banner">
                 <label for="banner">バナー</label>
             </div>
             <div class="filter_btn">
-                <input type="checkbox" name="other" value="other" id="other">
+                <input type="checkbox" name="category" value="other" id="other">
                 <label for="other">その他</label>
             </div>
             <div class="filter_btn">
@@ -81,11 +81,11 @@
             </div>
 
             <div class="filter_btn">
-                <input type="checkbox" name="design" value="design" id="design">
+                <input type="checkbox" name="skill" value="design" id="design">
                 <label for="design">デザイン</label>
             </div>
             <div class="filter_btn">
-                <input type="checkbox" name="coding" value="coding" id="coding">
+                <input type="checkbox" name="skill" value="coding" id="coding">
                 <label for="coding">コーディング</label>
             </div>
         </div>
@@ -456,7 +456,7 @@
                     $(allBtn).prop('checked', false); // ALLボタンを解除
                     $(`${filterBtn} input`).each(function () {
                         if ($(this).attr('name') !== currentCategoryName) {
-                            $(this).prop('checked', false); // 他のボタンを解除
+                            // $(this).prop('checked', false); // 他のボタンを解除 複数選択するために解除
                         }
                     });
                     search_filter();
@@ -481,6 +481,7 @@
                         } else {
                             $(this).removeClass(hideClass);
                         }
+
                     });
                 });
 
@@ -506,8 +507,13 @@
             // アイテムのデータを取得
             function get_setting_values_in_item(target, data) {
                 var itemData = target.data('category');
+                // var itemData = target.data('skill');
+                // var itemData = {
+                //     category: target.data('category'),
+                //     skill: target.data('skill')
+                // };
                 if (typeof itemData === 'string') {
-                    itemData = itemData.split(' '); // スペースで分割
+                    itemData = itemData.split(' '); // スペース区切りで分割
                 }
                 return itemData;
             }
@@ -516,6 +522,7 @@
             function array_match_check(arr1, arr2) {
                 return arr1.some(value => arr2.includes(value)); // 配列同士で一致があるかチェック
             }
+
         });
 
     </script>
