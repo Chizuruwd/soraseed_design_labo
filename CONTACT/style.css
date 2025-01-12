@@ -3,6 +3,14 @@
 body {
     background-color: #f9f7ef;
 }
+/* デコレーション */
+.decoration {
+    transition: 1s;
+}
+section {
+    position: relative;
+}
+
 /* -- ヘッダー -- */
 header {
     position: relative;
@@ -254,12 +262,52 @@ h3 {
     display: inline-block;
     text-align: left;
 }
+/* デコレーション */
+.cloud03 {
+    max-width: 15%;
+    position: absolute;
+    top: 80px;
+    left: 4%;
+    animation: Float 5s ease-in-out infinite alternate;
+}
+.cloud06 {
+    max-width: 20%;
+    position: absolute;
+    top: 422px;
+    right: 0;
+    animation: Float 7s ease-in-out infinite alternate;
+}
+@keyframes Float {
+    0% {
+        transform: translateY(1vw);
+    }
+    50% {
+        transform: translateY(-1vw);
+    }
+    100% {
+        transform: translateY(0.5vw);
+    }
+}
 @media screen and (max-width: 767px) {
     h3 {
         font-size: 36px;
     }
+    .CONTACT_lead {
+        margin-bottom: 50px;
+    }
     .CONTACT_lead p {
         font-size: 14px;
+    }
+    /* デコレーション */
+    .cloud03 {
+        max-width: 21%;
+        top: 5%;
+        left: 4%;
+    }
+    .cloud06 {
+        max-width: 19%;
+        top: 68%;
+        right: 0;
     }
 }
 /* -- お問い合わせフォーム -- */

@@ -3,12 +3,15 @@
 body {
     overflow-x: hidden;
 } */
+html {
+    overflow-x: hidden;
+}
 body {
     background-color: #f9f7ef;
 }
-.contents {
+/* .contents {
     overflow-x: hidden;
-}
+} */
 
 /* -- メインビジュアル -- */
 .Home {
@@ -273,11 +276,16 @@ body {
     position: relative;
     /* top: 795px; */
     z-index: 50;
-    background-image: url("../images/FV_green.svg");
+    /* background-image: url("../images/FV_green.svg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     padding: 16% 0;
     margin-top: -5%;
+}
+.green_wrap_img {
+    position: absolute;
+    top: 0;
+    z-index: -1;
 }
 /* パララックス */
 /* .main {
@@ -820,7 +828,7 @@ h4 {
     }
     .cloud05 {
         max-width: 19%;
-        top: 232px;
+        top: 290px;
     }
 
     .CONTACTmessage p {
