@@ -16,7 +16,7 @@ body {
 /* -- ローディング画面 -- */
 .loading {
     width: 100%;
-    height: 100vw;
+    height: 100vh;
     background-color: #f9f7ef;
     position: fixed;
     top: 0;
@@ -961,4 +961,21 @@ footer {
 .pagetop01.active,
 .pagetop02.active {
     opacity: 1;
+}
+
+.fadeInBottom_item {
+    opacity: 0;
+    transform: translateY(100%);
+    animation: fadeInBottom 3s forwards;
+}
+.scroll_active .is-animated .fadeInBottom_item {
+    animation: fall 4s linear forwards, fadeInBottom 4s ease-in-out alternate;
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInBottom {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

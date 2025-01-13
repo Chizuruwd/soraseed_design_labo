@@ -139,8 +139,8 @@
 
     <div class="contents">
         <!-- ABOUT ME -->
-        <section class="ABOUT">
-            <h3>
+        <section class="ABOUT scroll_active">
+            <h3 class="fadeInBottom_item">
                 ABOUT ME
             </h3>
             <div class="cloud01 decoration">
@@ -506,6 +506,20 @@
 
         //     targets.forEach(target => observer.observe(target));
         // });
+
+        let targets = document.querySelectorAll('.scroll_active'); //アニメーションさせたい要素
+        //スクロールイベント
+        window.addEventListener('scroll', function () {
+            var scroll = window.scrollY; //スクロール量を取得
+            var windowHeight = window.innerHeight; //画面の高さを取得
+            for (let target of targets) { //ターゲット要素がある分、アニメーション用のクラスをつける処理を繰り返す
+                var targetPos = target.getBoundingClientRect().top + scroll; //ターゲット要素の位置を取得
+                if (scroll > targetPos - windowHeight) { //スクロール量 > ターゲット要素の位置
+                    target.classList.add('is_animated'); //is_animatedクラスを加える
+                }
+            }
+        });
+
 
     </script>
 </body>
