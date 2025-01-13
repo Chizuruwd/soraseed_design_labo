@@ -13,6 +13,45 @@ body {
     overflow-x: hidden;
 }
 
+/* -- ローディング画面 -- */
+.loading {
+    width: 100%;
+    height: 100vw;
+    background-color: #f9f7ef;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all 1s linear;
+}
+/*ローディング画面を非表示に*/
+.loading.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+#container {
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+.loading-text {
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 100px;
+    text-align: center;
+}
+.progressbar-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 /* -- メインビジュアル -- */
 .Home {
     overflow-x: hidden;
@@ -206,7 +245,10 @@ body {
     top: 14%;
     left: 10%;
     z-index: 15;
+    opacity: 0;
     animation: fadeIn 7s;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
 }
 @keyframes fadeIn {
     0% {
@@ -223,7 +265,10 @@ body {
     top: 25%;
     left: 0;
     z-index: 10;
-    animation: growUp ease 2s;
+    opacity: 0;
+    animation: growUp ease 2.7s;
+    animation-delay: 2.5s;
+    animation-fill-mode: forwards;
 }
 @keyframes growUp {
     0% {

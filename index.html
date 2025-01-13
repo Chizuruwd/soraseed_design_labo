@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- jQuery JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./progressbar/progressbar.min.js"></script>
     <!-- slick JS -->
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- lightbox JS -->
@@ -44,6 +45,16 @@
 
 
 <body>
+    <!-- ローディング画面 -->
+    <section class="loading">
+        <div class="loading_contents">
+            <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet"
+                type="text/css">
+            <div id="container"></div>
+            <p class="loading-text">Loading...</p>
+        </div>
+    </section>
+
     <!-- メインビジュアル -->
     <section class="Home">
         <div class="main">
@@ -282,6 +293,70 @@
 
     <!-- JavaScript -->
     <script>
+        // ローディング
+        // progressbar.js@1.0.0 version is used
+        // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
+
+        var bar = new ProgressBar.Circle(container, {
+            strokeWidth: 6, //ローディングバーの太さ
+            easing: 'easeInOut',
+            duration: 1400, //アニメーションの速さ
+            color: '#aaa3a1', // 1-100%の色
+            // trailColor: '#eee',
+            trailWidth: 1,
+            // svgStyle: null,
+
+            text: {
+                autoStyleContainer: false
+            },
+            from: { color: '#aaa3a1', width: 1 },
+            to: { color: '#7bb7c2', width: 4 },
+            // Set default step function for all animate calls
+            step: function (state, circle) {
+                circle.path.setAttribute('stroke', state.color);
+                circle.path.setAttribute('stroke-width', state.width);
+
+                var value = Math.round(circle.value() * 100);
+                if (value === 0) {
+                    circle.setText('');
+                } else {
+                    circle.setText(value);
+                }
+
+            }
+        });
+        bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+        bar.text.style.fontSize = '2rem';
+
+        // bar.animate(1.0);  // Number from 0.0 to 1.0
+        //         });
+
+        //ローディング画面を取得
+        const loading = document.querySelector(".loading");
+
+        //ページの読み込み完了時に処理を実行
+        window.addEventListener("load", () => {
+            //2秒後にローディング画面を非表示にする
+            setTimeout(() => {
+                loading.classList.add("loaded");
+            }, 2000);
+        });
+        // //ページの読み込み完了時に処理を実行
+        // window.addEventListener("load", () => {
+        //     //読み込み終了後すぐにローディング画面を非表示にする
+        //     loading.classList.add("loaded");
+        // });
+
+        // step: (state, bar) => {
+        //     bar.setText(Math.round(bar.value() * 100) + ' %');
+        //     setTimeout(() => {
+        //         $('.loading').fadeOut();
+        //     }, 2000); // 100％になって、2秒経ったらローディング画面を消す
+        // }
+
+        bar.animate(1.0);  // Number from 0.0 to 1.0
+
+
         // メニュー
         $(function () {
             $('.openbtn').on('click', function () {
