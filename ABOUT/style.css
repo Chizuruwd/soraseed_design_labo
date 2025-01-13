@@ -162,7 +162,101 @@ header {
         right: 18px;
     }
 }
-
+/* デコレーション */
+.decoration {
+    transition: 1s;
+}
+section {
+    position: relative;
+}
+.cloud01 {
+    max-width: 15%;
+    position: absolute;
+    top: -15%;
+    left: 6%;
+    animation: Float 7s ease-in-out infinite alternate;
+}
+@keyframes Float {
+    0% {
+        transform: translateY(1vw);
+    }
+    50% {
+        transform: translateY(-1vw);
+    }
+    100% {
+        transform: translateY(0.5vw);
+    }
+}
+.cloud02 {
+    width: 230px;
+    position: absolute;
+    top: 88%;
+    right: 2%;
+    animation: Float 5s ease-in-out infinite alternate;
+}
+.cloud03 {
+    max-width: 23%;
+    position: absolute;
+    top: -60px;
+    left: 10%;
+    animation: Float 7s ease-in-out infinite alternate;
+}
+.butterfly01 {
+    max-width: 9%;
+    position: absolute;
+    top: -80px;
+    right: 37%;
+    animation: flutter 2s infinite alternate;
+}
+@keyframes flutter {
+    0% {
+        transform: rotate(3deg);
+    }
+    50% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(-3deg);
+    }
+}
+/* 767px~ */
+@media screen and (max-width: 767px) {
+    .WORKS {
+        padding: 0 5%;
+        margin-bottom: 180px;
+    }
+    h3 {
+        font-size: 36px;
+    }
+    .cloud01 {
+        max-width: 26%;
+        top: -10%;
+        left: 0;
+    }
+    .cloud02 {
+        width: 160px;
+        top: auto;
+        right: 0;
+        bottom: 230px;
+    }
+    .cloud03 {
+        max-width: 250px;
+        width: 40%;
+        top: -80px;
+        left: 2%;
+    }
+    .butterfly01 {
+        max-width: 17%;
+        top: -70px;
+        right: 27%;
+    }
+}
+/* 440~766px */
+@media screen and (max-width: 440px) {
+    .cloud02 {
+        bottom: 320px;
+    }
+}
 /* -- コンセプト -- */
 /* slick用 */
 /* .concept_slider_wrap {
@@ -327,6 +421,7 @@ h5 span {
     }
     h5 {
         font-size: 17px;
+        margin-top: 60px;
     }
     .profile_text p {
         font-size: 14px;
