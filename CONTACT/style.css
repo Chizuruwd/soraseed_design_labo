@@ -342,22 +342,28 @@ label {
     padding: 10px 15px;
 }
 /* セレクトボックスの矢印 */
-/* select {
+select {
     appearance: none;
 }
-.form_field span {
-    position: relative;
+select::-ms-expand {
+    display: none;
 }
-.form_field span::after {
+.form_field_wrap::after {
     content: "";
     position: absolute;
-    top: 22px;
-    right: 12px;
-    border-right: 12px solid transparent;
-    border-left: 12px solid transparent;
+    top: 18px;
+    right: 15%;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
     border-top: 12px solid #555;
     border-bottom: 0;
-} */
+    pointer-events: none;
+}
+
+::placeholder {
+    color: #aaa3a1;
+}
+
 /* 送信ボタン */
 .send_btn {
     width: 167px;
@@ -388,6 +394,9 @@ label {
     }
     .form_field {
         width: 84%;
+    }
+    .form_field_wrap::after {
+        right: 12%;
     }
     .send_btn {
         width: 120px;

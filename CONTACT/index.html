@@ -30,8 +30,10 @@
     <header classs="header">
         <div class="header_wrap" id="header">
             <h1 class="header_logo">
-                <img src="../images/logo02.svg" alt="Soraseed Design Labo" class="color_logo">
-                <img src="../images/logo01.svg" alt="Soraseed Design Labo" class="white_logo">
+                <a href="../index.html">
+                    <img src="../images/logo02.svg" alt="Soraseed Design Labo" class="color_logo">
+                    <img src="../images/logo01.svg" alt="Soraseed Design Labo" class="white_logo">
+                </a>
             </h1>
             <div class="openbtn">
                 <span></span>
@@ -76,26 +78,30 @@
             method="POST" target="hidden_iframe" onsubmit="submitted=true" class="contact_form">
             <div class="form_block">
                 <label for="name">お名前</label>
-                <input type="text" name="entry.1880405232" id="name" class="form_field" required>
+                <input type="text" name="entry.1880405232" id="name" placeholder="山田　太郎" class="form_field" required>
             </div>
             <div class="form_block">
                 <label for="email">メールアドレス</label>
-                <input type="email" name="entry.347046966" id="email" class="form_field" required>
+                <input type="email" name="entry.347046966" id="email" placeholder="sample@example.com"
+                    class="form_field" required>
 
             </div>
             <div class="form_block">
                 <label for="regarding">ご用件 </label>
-                <select name="entry.1997355272" id="regarding" class="form_field">
-                    <option value="" hidden>選択してください</option>
-                    <option name="request" value="ご依頼">ご依頼</option>
-                    <option name="consultation" value="ご相談">ご相談</option>
-                    <option name="other" value="その他">その他</option>
-                </select>
+                <div class="form_field_wrap">
+                    <select name="entry.1997355272" id="regarding" class="form_field">
+                        <option value="" hidden>選択してください</option>
+                        <option name="request" value="ご依頼">ご依頼</option>
+                        <option name="consultation" value="ご相談">ご相談</option>
+                        <option name="other" value="その他">その他</option>
+                    </select>
+                </div>
 
             </div>
             <div class="form_block">
                 <label for="inqury">お問い合わせ内容</label>
-                <textarea name="entry.445287505" id="inqury" class="form_field inqury_field"></textarea>
+                <textarea name="entry.445287505" id="inqury" placeholder="(例)デザイン制作について相談したいです。"
+                    class="form_field inqury_field"></textarea>
 
             </div>
 
