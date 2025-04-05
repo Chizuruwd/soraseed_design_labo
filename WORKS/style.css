@@ -557,6 +557,9 @@ h4 {
 .WORKS_category {
     width: 44%;
 }
+.WORKS_category li {
+    margin-right: 10px;
+}
 .WORKS_category li:not(:last-child) {
     margin-bottom: 45px;
 }
